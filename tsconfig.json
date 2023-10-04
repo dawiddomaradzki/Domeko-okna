@@ -2,6 +2,7 @@
   "include": ["src"],
   "extends": "./tsconfig.extend.json",
   "compilerOptions": {
+      "typeRoots": ["types.d.ts"],
       "target": "es5",
       "lib": ["dom", "dom.iterable", "esnext"],
       "allowJs": true,
@@ -26,6 +27,6 @@
       "noFallthroughCasesInSwitch": true,
       "noImplicitReturns": true,
       "baseUrl": "./src",
-      "noEmit": true
+      "noEmit": true,
   }
 }

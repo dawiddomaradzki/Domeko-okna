@@ -11,7 +11,10 @@ const GlobalStyle = createGlobalStyle`
 	}
  	a {
 		text-decoration: unset;
-		color: black;
+    color: inherit;
+        text-decoration: inherit;
+        font-size: inherit;
+        font-weight: inherit;
 	}
 	button {
 		cursor: pointer;

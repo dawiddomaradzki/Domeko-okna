@@ -1,10 +1,3 @@
-export const FONT_SIZE = {
-    default: '1rem',
-    normal: '1.5rem',
-    medium: '2rem',
-    xlarge: '2.75rem',
-};
-
 export const COLOR = {
     black: '#000000',
     white: '#FFFFFF',
@@ -19,6 +12,13 @@ export const COLOR = {
     grey: '#354649',
 };
 
+export const FONT_SIZE = {
+    default: '1rem',
+    snormal: '1.3rem',
+    normal: '1.5rem',
+    medium: '2rem',
+    xlarge: '2.75rem',
+};
 export const FONT_WEIGHT = {
     lite: '300',
     normal: '400',
@@ -32,4 +32,14 @@ export const LINE_HEIGHT = {
     medium: '2rem',
     xlarge: '2.75rem',
     xxlarge: '3.5rem',
+};
+
+export const SCREEN_WIDTH = {
+    xsmall: '400px',
+    small: '576px',
+    medium: '768px',
+    large: '992px',
+    xlargeMax: '1200px',
+    xlargeMin: '1201px',
+    xxlarge: '1400px',
 };

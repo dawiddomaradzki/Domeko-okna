@@ -20,7 +20,7 @@ const App = () => {
             <Welcome />
             <HomeInformation />
             <AboutUs />
-            <IconsSection />
+            {/*<IconsSection />
             <WoodWindow />
             <WoodWindowInfo />
             <SlidingWindow />
@@ -29,7 +29,7 @@ const App = () => {
             <Catalog />
             <Realizations />
             <MapFrame />
-            <Footer />
+            <Footer /> */}
         </div>
     );
 };

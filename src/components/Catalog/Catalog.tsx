@@ -6,6 +6,7 @@ import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT } from '@/Global/globalStyles';
 import techCatalog from '@/resources/Images/techCatalog.webp';
 import windowCatalog from '@/resources/Images/windowCatalog.webp';
+import DownloadCatalog from '@/resources/Pdf/katalog.pdf';
 import TechDownloadCatalog from '@/resources/Pdf/katalogTechniczny.pdf';
 
 interface CatalogProps {
@@ -21,7 +22,7 @@ const Catalog = ({ className }: CatalogProps) => {
                     <Image src={windowCatalog} alt="windowCatalog" />
                     <Header>Katalog okien drewnianych</Header>
                     <StyledButton variant="secondary" size="lg">
-                        <a href={TechDownloadCatalog} download="katalog-techniczny">
+                        <a href={DownloadCatalog} download="katalog">
                             Pobierz
                         </a>
                     </StyledButton>
@@ -30,7 +31,9 @@ const Catalog = ({ className }: CatalogProps) => {
                     <Image src={techCatalog} alt="techCatalog" />
                     <Header>Katalog techniczny okien drewnianych</Header>
                     <StyledButton variant="secondary" size="lg">
-                        Pobierz
+                        <a href={TechDownloadCatalog} download="katalog-techniczny">
+                            Pobierz
+                        </a>
                     </StyledButton>
                 </ImageWrapper>
             </Wrapper>

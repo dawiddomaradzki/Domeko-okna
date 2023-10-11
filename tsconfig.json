@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["src", "types.d.ts"],
   "extends": "./tsconfig.extend.json",
   "compilerOptions": {
       "typeRoots": ["types.d.ts"],

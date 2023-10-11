@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Box } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT } from '@/Global/globalStyles';
+import { FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import aboutUsPhoto from '@/resources/Images/aboutUsPhoto.jpg';
 
 interface HomeInformationProps {
@@ -38,24 +38,51 @@ const Styled = styled(Memoized)`
     justify-content: space-around;
     max-width: 1800px;
     padding-top: 8rem;
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        padding-top: 3rem;
+        flex-direction: column;
+        justify-content: center;
+    }
 `;
 
 const Wrapper = styled.div`
     padding: 0 4rem 0 0;
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
 `;
 
 const StyledImg = styled.img`
     width: 720px;
+
+    @media (max-width: ${SCREEN_WIDTH.large}) {
+        width: 460px;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        width: 360px;
+    }
 `;
 
 const TextSectionWrapper = styled(Box)`
     flex-direction: column;
     padding: 0 6rem;
+
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        padding: 0 3rem 2rem;
+    }
 `;
 
 const StyledText = styled.p`
     font-weight: ${FONT_WEIGHT.normal};
     font-size: ${FONT_SIZE.normal};
     line-height: ${LINE_HEIGHT.xlarge};
+
+    @media (max-width: ${SCREEN_WIDTH.xlargeMin}) {
+        font-size: ${FONT_SIZE.snormal};
+        line-height: ${LINE_HEIGHT.medium};
+        font-weight: ${FONT_WEIGHT.lite};
+    }
 `;
 export default Styled;

@@ -80,9 +80,8 @@ const StyledText = styled.p`
     line-height: ${LINE_HEIGHT.xlarge};
 
     @media (max-width: ${SCREEN_WIDTH.xlargeMin}) {
-        font-size: ${FONT_SIZE.snormal};
+        font-size: ${FONT_SIZE.normal};
         line-height: ${LINE_HEIGHT.medium};
-        font-weight: ${FONT_WEIGHT.lite};
     }
 `;
 export default Styled;

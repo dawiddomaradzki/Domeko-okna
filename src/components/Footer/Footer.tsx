@@ -19,11 +19,25 @@ const Footer = ({ className }: FooterProps) => {
                     <Header>KONTAKT</Header>
                     <ColumnWrapper2>
                         <img src={call} alt="call" />
-                        <Text>+41 394 58 47</Text>
+                        <Text>
+                            <a href="tel:+41 394 58 47">+41 394 58 47</a>
+                        </Text>
                         <img src={email} alt="email" />
-                        <Text>info@domeko.eu</Text>
+                        <Text>
+                            <a href="mailto:info@domeko.eu" rel="nofollow noreferrer">
+                                info@domeko.eu
+                            </a>
+                        </Text>
                         <img src={facebook} alt="facebook" />
-                        <Text>facebook</Text>
+                        <Text>
+                            <a
+                                href="https://www.facebook.com/Domeko-W%C5%82oszczowa-564951136912778/"
+                                target="blank"
+                                rel="nofollow noreferrer"
+                            >
+                                facebook
+                            </a>
+                        </Text>
                     </ColumnWrapper2>
                 </div>
                 <div>
@@ -41,9 +55,17 @@ const Footer = ({ className }: FooterProps) => {
                     <Header>LOKALIZACJA</Header>
                     <ColumnWrapper2>
                         <img src={location} alt="location" />
-                        <Text>ul. Przedborska 45</Text>
+                        <Text>
+                            <a href="https://goo.gl/maps/fjd2s9bmYHuYsVnN9" target="blank" rel="nofollow noreferrer">
+                                ul. Przedborska 45
+                            </a>
+                        </Text>
                         <div />
-                        <Text>29-100 Włoszczowa</Text>
+                        <Text>
+                            <a href="https://goo.gl/maps/fjd2s9bmYHuYsVnN9" target="blank" rel="nofollow noreferrer">
+                                29-100 Włoszczowa
+                            </a>
+                        </Text>
                     </ColumnWrapper2>
                 </div>
             </Container>

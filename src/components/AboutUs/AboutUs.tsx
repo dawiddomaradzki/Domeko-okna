@@ -80,10 +80,10 @@ const DescriptionContainer = styled(Box)`
 `;
 
 const StyledText = styled.p`
-    color: ${COLOR.white};
+    font-weight: ${FONT_WEIGHT.normal};
     font-size: ${FONT_SIZE.normal};
     line-height: ${LINE_HEIGHT.xlarge};
-    font-weight: ${FONT_WEIGHT.normal};
+    color: ${COLOR.white};
     @media (max-width: ${SCREEN_WIDTH.medium}) {
         font-size: ${FONT_SIZE.normal};
         line-height: ${LINE_HEIGHT.medium};

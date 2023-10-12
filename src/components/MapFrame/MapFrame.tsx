@@ -41,14 +41,18 @@ const MapFrame = ({ className }: MapFrameProps) => {
                         <ButtonWrapper>
                             <Img src={DomekoLogoNoBackgroundSVG} alt="DomekoLogoNoBackgroundSVG" />
                             <StyledButton variant="secondary" size="lg">
-                                Sprawdź
+                                <a href="https://domeko.eu/" target="blank">
+                                    Sprawdź
+                                </a>
                                 <StyledIcon src={arrow} alt="arrow" />
                             </StyledButton>
                         </ButtonWrapper>
                         <ButtonWrapper>
                             <Img src={WGTtextSVG} alt="WGTtextSVG" />
                             <StyledButton variant="secondary" size="lg">
-                                Sprawdź
+                                <a href="https://www.woodnatural.pl/" target="blank">
+                                    Sprawdź
+                                </a>
                                 <StyledIcon src={arrow} alt="arrow" />
                             </StyledButton>
                         </ButtonWrapper>

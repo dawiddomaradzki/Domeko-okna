@@ -1,4 +1,5 @@
 {
+  "homepage": "http://dawiddomaradzki.github.io/Domeko-okna",
   "name": "okna",
   "version": "0.1.0",
   "private": true,
@@ -22,6 +23,8 @@
   },
   "scripts": {
     "start": "craco start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco test"
@@ -33,6 +36,7 @@
     "@types/styled-components": "^5.1.18",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
+    "craco-alias": "^3.0.1",
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^7.0.0",
@@ -45,9 +49,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-testing-library": "^5.0.1",
+    "gh-pages": "^6.0.0",
     "jest-styled-components": "^7.0.8",
-    "prettier": "2.5.1",
-    "craco-alias": "^3.0.1"
+    "prettier": "2.5.1"
   },
   "eslintConfig": {
     "extends": [

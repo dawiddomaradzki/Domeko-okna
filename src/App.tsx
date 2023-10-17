@@ -37,7 +37,7 @@ const App = () => {
                     <Navigation />
                     <Welcome />
                     <HomeInformation />
-                    <AboutUs />
+                    {/* <AboutUs />
                     <IconsSection />
                     <WoodWindow />
                     <WoodWindowInfo />
@@ -47,7 +47,7 @@ const App = () => {
                     <Catalog />
                     <Realizations />
                     <MapFrame />
-                    <Footer />
+                    <Footer /> */}
                 </>
             )}
         </div>

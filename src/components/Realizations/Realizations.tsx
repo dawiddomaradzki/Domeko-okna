@@ -5,7 +5,7 @@ import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
 
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR } from '@/Global/globalStyles';
+import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
 import picture1 from '@/resources/Images/Realizations/1.png';
 import picture2 from '@/resources/Images/Realizations/2.png';
 import picture3 from '@/resources/Images/Realizations/3.png';
@@ -106,6 +106,13 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 8rem;
+
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        padding-top: 3rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        padding-top: 2rem;
+    }
 `;
 
 const ImageGalleryWrapper = styled.div`

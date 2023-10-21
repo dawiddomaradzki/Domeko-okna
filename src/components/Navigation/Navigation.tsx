@@ -100,9 +100,6 @@ const Line = styled.div`
     border-bottom: 4px solid ${COLOR.deepCarrotOrange};
     width: 80%;
 
-    /* @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
-        margin-top: 0.6rem;
-    } */
     @media (max-width: ${SCREEN_WIDTH.small}) {
         margin-top: 0.5rem;
     }

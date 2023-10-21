@@ -22,9 +22,8 @@ const AboutUs = ({ className }: AboutUsProps) => {
             <DescriptionContainer>
                 <StyledText>
                     Jesteśmy partnerem oznaczonym logo AGM - Autoryzowane Grupy Montażowe. Jest to gwarancja doskonałej
-                    usługi montażu okien i drzwi Wood Natural System. Certyfikowane szkolenia dla naszych Partnerów
-                    pozwalają uzyskać najwyższe kwalifikacje, wyjątkowe warunki oraz dają możliwość zapoznania się z
-                    najnowszymi technologiami.
+                    usługi montażu okien i drzwi Wood Natural System. Certyfikowane szkolenia pozwalają nam uzyskać
+                    najwyższe kwalifikacje, aby sprostać oczekiwaniom naszych klientów.
                 </StyledText>
             </DescriptionContainer>
         </div>

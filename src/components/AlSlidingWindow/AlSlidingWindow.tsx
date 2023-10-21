@@ -2,8 +2,8 @@ import { memo } from 'react';
 import styled from 'styled-components';
 
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT } from '@/Global/globalStyles';
-import slidingWindow from '@/resources/Images/slidingWindow.png';
+import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import poolWindow from '@/resources/Images/poolWindow.png';
 import woodAluHs from '@/resources/Images/woodAluHs.webp';
 
 interface AlSlidingWindowProps {
@@ -13,7 +13,7 @@ interface AlSlidingWindowProps {
 const AlSlidingWindow = ({ className }: AlSlidingWindowProps) => {
     return (
         <div className={className}>
-            <HeaderWithLine text="Okna przesuwne WOOD + HS" />
+            <HeaderWithLine text="Okna przesuwne WOOD ALU HS" />
             <Wrapper>
                 <Container>
                     <ImageWrapper>
@@ -60,9 +60,9 @@ const AlSlidingWindow = ({ className }: AlSlidingWindowProps) => {
                         </SubtextWrapper>
                     </div>
                 </Container>
-                <div>
-                    <StyledImg src={slidingWindow} alt="slidingWindow" />
-                </div>
+                <ImageContainer>
+                    <StyledImg src={poolWindow} alt="poolWindow" />
+                </ImageContainer>
             </Wrapper>
         </div>
     );
@@ -73,6 +73,13 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 8rem;
+
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        padding-top: 3rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        padding-top: 2rem;
+    }
 `;
 const MainText = styled.p`
     color: ${COLOR.ghostWhite};
@@ -107,6 +114,11 @@ const ColorText = styled.p`
     font-size: ${FONT_SIZE.normal};
     line-height: ${LINE_HEIGHT.medium};
     text-align: center;
+
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        font-size: ${FONT_SIZE.default};
+        line-height: ${LINE_HEIGHT.normal};
+    }
 `;
 
 const Color = styled.div<{ color: string }>`
@@ -117,41 +129,84 @@ const Color = styled.div<{ color: string }>`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: ${SCREEN_WIDTH.medium}) {
+        height: 3.5rem;
+        width: 8.5rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        width: 6.5rem;
+    }
 `;
 const ColorsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
 `;
 
 const ColorWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1.5rem;
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        flex-direction: row;
+        justify-content: center;
+    }
 `;
 const Wrapper = styled.div`
+    display: grid;
     background-color: ${COLOR.midnightGreen};
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
 `;
 const Container = styled.div`
     padding: 5rem 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media (max-width: ${SCREEN_WIDTH.large}) {
+        padding: 2.5rem 3rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        padding: 2.5rem 0.5rem;
+    }
 `;
 
 const StyledImg = styled.img`
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 `;
 
 const Image = styled.img`
     width: 600px;
+    @media (max-width: ${SCREEN_WIDTH.medium}) {
+        width: 450px;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        width: 350px;
+    }
 `;
 
 const ImageWrapper = styled.div`
     display: flex;
     justify-content: center;
+    margin-bottom: 3rem;
+`;
+
+const ImageContainer = styled.div`
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        height: 500px;
+    }
 `;
 
 export default Styled;

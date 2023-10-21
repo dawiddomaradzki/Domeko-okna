@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import techCatalog from '@/resources/Images/techCatalog.webp';
 import windowCatalog from '@/resources/Images/windowCatalog.webp';
 import DownloadCatalog from '@/resources/Pdf/katalog.pdf';
@@ -46,6 +46,12 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 8rem;
+    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+        padding-top: 3rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        padding-top: 2rem;
+    }
 `;
 
 const Image = styled.img`
@@ -55,6 +61,10 @@ const Image = styled.img`
 const StyledButton = styled(Button)`
     width: 250px;
     margin-top: 2.5rem;
+
+    @media (max-width: ${SCREEN_WIDTH.large}) {
+        margin-top: 1.5rem;
+    }
 `;
 
 const ImageWrapper = styled.div`
@@ -63,6 +73,10 @@ const ImageWrapper = styled.div`
     flex-direction: column;
     position: relative;
     bottom: 3rem;
+
+    @media (max-width: ${SCREEN_WIDTH.large}) {
+        margin-top: 3rem;
+    }
 `;
 
 const Wrapper = styled.div`
@@ -75,12 +89,21 @@ const Wrapper = styled.div`
         ${COLOR.ghostWhite} 90%,
         ${COLOR.ghostWhite} 100%
     );
+
+    @media (max-width: ${SCREEN_WIDTH.large}) {
+        flex-direction: column;
+    }
 `;
 
 const Header = styled.p`
+    text-align: center;
     color: ${COLOR.ghostWhite};
     font-weight: ${FONT_WEIGHT.bold};
     font-size: ${FONT_SIZE.normal};
     line-height: ${LINE_HEIGHT.medium};
+
+    @media (max-width: ${SCREEN_WIDTH.large}) {
+        font-size: ${FONT_SIZE.snormal};
+    }
 `;
 export default Styled;

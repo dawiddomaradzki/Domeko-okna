@@ -40,15 +40,20 @@ const Container = styled.div`
 const Line = styled.div`
     margin-top: 1rem;
     border-bottom: 4px solid ${COLOR.deepCarrotOrange};
-    width: 70%;
+    width: 90%;
 `;
 
 const StyledHeader = styled.p`
+    text-align: center;
     font-weight: ${FONT_WEIGHT.bold};
     font-size: ${FONT_SIZE.xlarge};
     line-height: ${LINE_HEIGHT.xlarge};
     @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
         font-size: ${FONT_SIZE.medium};
+    }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        font-size: ${FONT_SIZE.normal};
+        line-height: ${LINE_HEIGHT.medium};
     }
 `;
 export default Styled;

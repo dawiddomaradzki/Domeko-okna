@@ -15,13 +15,13 @@ const Welcome = ({ className }: WelcomeProps) => {
         <div className={className}>
             <Carousel fade data-bs-theme="dark" controls={false}>
                 <Carousel.Item interval={40000}>
-                    <StyledImg src={carousel1} alt="carousel1" />
-                </Carousel.Item>
-                <Carousel.Item interval={40000}>
                     <StyledImg src={carousel2} alt="carousel2" />
                 </Carousel.Item>
                 <Carousel.Item interval={40000}>
                     <StyledImg src={carousel3} alt="carousel3" />
+                </Carousel.Item>
+                <Carousel.Item interval={40000}>
+                    <StyledImg src={carousel1} alt="carousel1" />
                 </Carousel.Item>
             </Carousel>
         </div>

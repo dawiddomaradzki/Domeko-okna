@@ -58,10 +58,9 @@ const StyledImg = styled.img`
     width: 720px;
 
     @media (max-width: ${SCREEN_WIDTH.large}) {
-        width: 460px;
-    }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        width: 360px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 `;
 

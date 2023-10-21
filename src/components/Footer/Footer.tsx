@@ -82,6 +82,7 @@ const Styled = styled(Memoized)`
 
     @media (max-width: ${SCREEN_WIDTH.small}) {
         font-size: ${FONT_SIZE.snormal};
+        padding: 4rem 1.5rem 2rem;
     }
 `;
 const Container = styled.div`

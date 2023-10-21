@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/Domeko-okna/static/css/main.c4aaa04b.css",
-    "main.js": "/Domeko-okna/static/js/main.82faebee.js",
+    "main.js": "/Domeko-okna/static/js/main.2ebf026b.js",
     "static/media/katalogTechniczny.pdf": "/Domeko-okna/static/media/katalogTechniczny.c62491323352446b0f3a.pdf",
-    "static/media/ViewsVideo.mp4": "/Domeko-okna/static/media/ViewsVideo.54a39bf7c855216c080e.mp4",
+    "static/media/carousel3.jpg": "/Domeko-okna/static/media/carousel3.e1970190c15d73938aff.jpg",
     "static/media/katalog.pdf": "/Domeko-okna/static/media/katalog.706935e530eeffed756d.pdf",
     "static/media/larch.png": "/Domeko-okna/static/media/larch.0f97337310be299da2a7.png",
     "static/media/11.png": "/Domeko-okna/static/media/11.49f586dd427df551fbd8.png",
@@ -14,6 +14,7 @@
     "static/media/pine.png": "/Domeko-okna/static/media/pine.dcc7d0d91912d9e7562d.png",
     "static/media/4.png": "/Domeko-okna/static/media/4.2c3fcf47558084cd908c.png",
     "static/media/slidingWindow.png": "/Domeko-okna/static/media/slidingWindow.ea7defdea080c9af8c31.png",
+    "static/media/carousel2.jpg": "/Domeko-okna/static/media/carousel2.585d46b2942b04299791.jpg",
     "static/media/16.png": "/Domeko-okna/static/media/16.dc19a3fc1aa1c46a46fe.png",
     "static/media/10.png": "/Domeko-okna/static/media/10.a1dc4708ebcaaa7b8f4e.png",
     "static/media/6.png": "/Domeko-okna/static/media/6.aab7a26cade83103f301.png",
@@ -24,6 +25,8 @@
     "static/media/12.png": "/Domeko-okna/static/media/12.7dc827b1c44cedb78cf2.png",
     "static/media/14.png": "/Domeko-okna/static/media/14.83ef6ba253da6f02bd18.png",
     "static/media/3.png": "/Domeko-okna/static/media/3.6cb1df9d8e90d65db0c4.png",
+    "static/media/poolWindow.png": "/Domeko-okna/static/media/poolWindow.0cc749bd39e46eb59e79.png",
+    "static/media/carousel1.jpeg": "/Domeko-okna/static/media/carousel1.f4b3d327a54acb79030a.jpeg",
     "static/media/8.png": "/Domeko-okna/static/media/8.c610e67d6c6e5ced0fd7.png",
     "static/media/1.png": "/Domeko-okna/static/media/1.1ac281369a844e4e4ed2.png",
     "static/media/2.png": "/Domeko-okna/static/media/2.28cb267a3efcd7e95300.png",
@@ -47,11 +50,12 @@
     "static/media/truck-ramp-box-solid.svg": "/Domeko-okna/static/media/truck-ramp-box-solid.c999646b41aff9b6676d180943f665d0.svg",
     "static/media/arrow-up-right-from-square-solid.svg": "/Domeko-okna/static/media/arrow-up-right-from-square-solid.3dac437d5168761030aefda03b675712.svg",
     "static/media/face-smile-solid.svg": "/Domeko-okna/static/media/face-smile-solid.367fee9f3381052395de3999cfbdfb4c.svg",
+    "static/media/square-solid.svg": "/Domeko-okna/static/media/square-solid.d592a4f0bcf2ce6f436b19bc13021159.svg",
     "main.c4aaa04b.css.map": "/Domeko-okna/static/css/main.c4aaa04b.css.map",
-    "main.82faebee.js.map": "/Domeko-okna/static/js/main.82faebee.js.map"
+    "main.2ebf026b.js.map": "/Domeko-okna/static/js/main.2ebf026b.js.map"
   },
   "entrypoints": [
     "static/css/main.c4aaa04b.css",
-    "static/js/main.82faebee.js"
+    "static/js/main.2ebf026b.js"
   ]
 }

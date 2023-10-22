@@ -14,7 +14,7 @@ const WoodWindowInfo = ({ className }: WoodWindowInfoProps) => {
     return (
         <div className={className}>
             <HeaderWithLine text="Okna drewniane WOOD +" />
-            <ImgWrapper>
+            <ImgWrapper data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                 <StyledImg src={woodPlus} alt="logo" />
             </ImgWrapper>
             <Row>

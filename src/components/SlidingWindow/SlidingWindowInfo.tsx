@@ -14,7 +14,7 @@ const SlidingWindowInfo = ({ className }: SlidingWindowInfoProps) => {
     return (
         <div className={className}>
             <HeaderWithLine text="Okna drewniano-aluminiowe WOOD ALU" />
-            <ImgWrapper>
+            <ImgWrapper data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                 <StyledImg src={woodAlu} alt="woodAlu" />
             </ImgWrapper>
             <Row>

@@ -1,3 +1,5 @@
+import AOS from 'aos';
+
 import AboutUs from './components/AboutUs/AboutUs';
 import AlSlidingWindow from './components/AlSlidingWindow/AlSlidingWindow';
 import Catalog from './components/Catalog/Catalog';
@@ -6,6 +8,7 @@ import HomeInformation from './components/HomeInformation/HomeInformation';
 import IconsSection from './components/IconsSection/IconsSection';
 import MapFrame from './components/MapFrame/MapFrame';
 import Navigation from './components/Navigation/Navigation';
+import Pros from './components/Pros/Pros';
 import Realizations from './components/Realizations/Realizations';
 import SlidingWindow from './components/SlidingWindow/SlidingWindow';
 import SlidingWindowInfo from './components/SlidingWindow/SlidingWindowInfo';
@@ -14,6 +17,7 @@ import WoodWindow from './components/WoodWindow/WoodWindow';
 import WoodWindowInfo from './components/WoodWindow/WoodWindowInfo';
 
 const App = () => {
+    AOS.init({ once: false });
     return (
         <div>
             <Navigation />
@@ -21,6 +25,7 @@ const App = () => {
             <HomeInformation />
             <AboutUs />
             <IconsSection />
+            <Pros />
             <WoodWindow />
             <WoodWindowInfo />
             <SlidingWindow />l

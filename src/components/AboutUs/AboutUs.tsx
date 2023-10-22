@@ -16,8 +16,12 @@ const AboutUs = ({ className }: AboutUsProps) => {
         <div className={className}>
             <HeaderWithLine text="Dlaczego my?" />
             <IconsContainer>
-                <DomekoLogoNoBackgroundSVG />
-                <AGMPartnerLogoSVG />
+                <div data-aos="fade-right" data-aos-anchor-placement="center-bottom">
+                    <DomekoLogoNoBackgroundSVG />
+                </div>
+                <div data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                    <AGMPartnerLogoSVG />
+                </div>
             </IconsContainer>
             <DescriptionContainer>
                 <StyledText>

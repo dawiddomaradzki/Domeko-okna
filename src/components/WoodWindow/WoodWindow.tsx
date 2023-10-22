@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
+import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import larch from '@/resources/Images/larch.png';
 import meranti from '@/resources/Images/meranti.png';
@@ -59,7 +60,6 @@ const WoodWindow = ({ className }: WoodWindowProps) => {
 const Memoized = memo(WoodWindow);
 const Styled = styled(Memoized)`
     max-width: 1800px;
-    background-color: ${COLOR.midnightGreen};
     margin: auto;
     margin-top: 8rem;
     @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
@@ -72,6 +72,8 @@ const Styled = styled(Memoized)`
 
 const Wrapper = styled.div`
     display: grid;
+    background-color: ${COLOR.midnightGreen};
+
     grid-template-columns: repeat(2, 1fr);
     @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
         grid-template-rows: 1fr;

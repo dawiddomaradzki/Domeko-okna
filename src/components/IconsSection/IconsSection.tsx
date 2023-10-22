@@ -14,7 +14,7 @@ interface IconsSectionProps {
 
 const IconsSection = ({ className }: IconsSectionProps) => {
     return (
-        <div className={className}>
+        <div className={className} data-aos="fade-in" data-aos-anchor-placement="center-bottom">
             <Container>
                 <ImgWrapper>
                     <img src={PeopleIcon} alt="PeopleIcon" style={{ width: '180px' }} />

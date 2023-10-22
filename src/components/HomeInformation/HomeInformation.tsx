@@ -13,20 +13,22 @@ interface HomeInformationProps {
 const HomeInformation = ({ className }: HomeInformationProps) => {
     return (
         <div id="about" className={className}>
-            <TextSectionWrapper>
-                <HeaderWithLine text="Domeko okna i drzwi" />
-                <StyledText>
-                    Jesteśmy dynamiczną firmą, która oferuje kompleksowe usługi w dziedzinie doradztwa, transportu oraz
-                    sprzedaży okien i drzwi. Nasza firma jest z dumą partnerem renomowanej marki Wood Natural, co
-                    pozwala nam dostarczać najwyższej jakości produkty i usługi dla naszych klientów. Jeśli potrzebujesz
-                    profesjonalnego wsparcia w wyborze okien i drzwi, skontaktuj się z nami. Jesteśmy gotowi
-                    odpowiedzieć na Twoje pytania i zapewnić rozwiązania, które spełnią Twoje oczekiwania. Wood Glass
-                    Team to pewność jakości i satysfakcji klienta.
-                </StyledText>
-            </TextSectionWrapper>
-            <Wrapper>
-                <StyledImg src={aboutUsPhoto} alt="logo" />
-            </Wrapper>
+            <HeaderWithLine text="Domeko okna i drzwi" />
+            <Container data-aos="fade-in" data-aos-anchor-placement="top-center">
+                <TextSectionWrapper>
+                    <StyledText>
+                        Jesteśmy dynamiczną firmą, która oferuje kompleksowe usługi w dziedzinie doradztwa, transportu
+                        oraz sprzedaży okien i drzwi. Nasza firma jest z dumą partnerem renomowanej marki Wood Natural,
+                        co pozwala nam dostarczać najwyższej jakości produkty i usługi dla naszych klientów. Jeśli
+                        potrzebujesz profesjonalnego wsparcia w wyborze okien i drzwi, skontaktuj się z nami. Jesteśmy
+                        gotowi odpowiedzieć na Twoje pytania i zapewnić rozwiązania, które spełnią Twoje oczekiwania.
+                        Wood Glass Team to pewność jakości i satysfakcji klienta.
+                    </StyledText>
+                </TextSectionWrapper>
+                <Wrapper>
+                    <StyledImg src={aboutUsPhoto} alt="logo" />
+                </Wrapper>
+            </Container>
         </div>
     );
 };
@@ -34,10 +36,13 @@ const HomeInformation = ({ className }: HomeInformationProps) => {
 const Memoized = memo(HomeInformation);
 const Styled = styled(Memoized)`
     margin: auto;
+    max-width: 1800px;
+    padding-top: 5rem;
+`;
+
+const Container = styled.div`
     display: flex;
     justify-content: space-around;
-    max-width: 1800px;
-    padding-top: 8rem;
     @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
         padding-top: 3rem;
         flex-direction: column;
@@ -71,6 +76,8 @@ const TextSectionWrapper = styled(Box)`
     @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
         padding: 0 3rem 2rem;
     }
+
+    /* animation-duration: 2s; */
 `;
 
 const StyledText = styled.p`

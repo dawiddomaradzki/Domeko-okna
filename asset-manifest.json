@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Domeko-okna/static/css/main.c4aaa04b.css",
-    "main.js": "/Domeko-okna/static/js/main.a35d752e.js",
+    "main.js": "/Domeko-okna/static/js/main.464a8b86.js",
     "static/media/katalogTechniczny.pdf": "/Domeko-okna/static/media/katalogTechniczny.c62491323352446b0f3a.pdf",
     "static/media/carousel3.jpg": "/Domeko-okna/static/media/carousel3.e1970190c15d73938aff.jpg",
     "static/media/brownView.jpg": "/Domeko-okna/static/media/brownView.492a2d0da242883f15a7.jpg",
@@ -61,10 +61,10 @@
     "static/media/plug.svg": "/Domeko-okna/static/media/plug.991a454ed520075d093ecc63a2c887bc.svg",
     "static/media/square-solid.svg": "/Domeko-okna/static/media/square-solid.d592a4f0bcf2ce6f436b19bc13021159.svg",
     "main.c4aaa04b.css.map": "/Domeko-okna/static/css/main.c4aaa04b.css.map",
-    "main.a35d752e.js.map": "/Domeko-okna/static/js/main.a35d752e.js.map"
+    "main.464a8b86.js.map": "/Domeko-okna/static/js/main.464a8b86.js.map"
   },
   "entrypoints": [
     "static/css/main.c4aaa04b.css",
-    "static/js/main.a35d752e.js"
+    "static/js/main.464a8b86.js"
   ]
 }

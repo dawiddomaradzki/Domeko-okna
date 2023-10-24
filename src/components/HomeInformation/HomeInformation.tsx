@@ -18,11 +18,11 @@ const HomeInformation = ({ className }: HomeInformationProps) => {
                 <TextSectionWrapper>
                     <StyledText>
                         Jesteśmy dynamiczną firmą, która oferuje kompleksowe usługi w dziedzinie doradztwa, transportu
-                        oraz sprzedaży okien i drzwi. Nasza firma jest z dumą partnerem renomowanej marki Wood Natural,
-                        co pozwala nam dostarczać najwyższej jakości produkty i usługi dla naszych klientów. Jeśli
-                        potrzebujesz profesjonalnego wsparcia w wyborze okien i drzwi, skontaktuj się z nami. Jesteśmy
-                        gotowi odpowiedzieć na Twoje pytania i zapewnić rozwiązania, które spełnią Twoje oczekiwania.
-                        Wood Glass Team to pewność jakości i satysfakcji klienta.
+                        oraz sprzedaży okien i drzwi. Nasza firma jest z dumna z bycia partnerem renomowanej marki Wood
+                        Natural, co pozwala nam dostarczać najwyższej jakości produkty i usługi dla naszych klientów.
+                        Jeśli potrzebujesz profesjonalnego wsparcia w wyborze okien i drzwi, skontaktuj się z nami.
+                        Jesteśmy gotowi odpowiedzieć na Twoje pytania i zapewnić rozwiązania, które spełnią Twoje
+                        oczekiwania. Wood Glass Team to pewność jakości i satysfakcji klienta.
                     </StyledText>
                 </TextSectionWrapper>
                 <Wrapper>

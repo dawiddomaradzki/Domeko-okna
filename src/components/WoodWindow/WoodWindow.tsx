@@ -116,6 +116,9 @@ const StyledText = styled.p`
     @media (max-width: ${SCREEN_WIDTH.medium}) {
         line-height: ${LINE_HEIGHT.medium};
     }
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        font-size: ${FONT_SIZE.snormal};
+    }
 `;
 
 const StyledImg = styled.img`

@@ -139,6 +139,9 @@ const Header = styled.p`
     font-weight: ${FONT_WEIGHT.medium};
     text-align: center;
     margin-bottom: 3rem;
+    @media (max-width: ${SCREEN_WIDTH.small}) {
+        font-size: ${FONT_SIZE.normal};
+    }
 `;
 const Text = styled.p`
     text-align: center;

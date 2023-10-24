@@ -17,7 +17,7 @@ import WoodWindow from './components/WoodWindow/WoodWindow';
 import WoodWindowInfo from './components/WoodWindow/WoodWindowInfo';
 
 const App = () => {
-    AOS.init({ once: false });
+    AOS.init({ once: true });
     return (
         <div>
             <Navigation />

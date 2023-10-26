@@ -39,10 +39,10 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 8rem;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
     }
 `;
@@ -55,12 +55,12 @@ const IconsContainer = styled(Box)`
         height: auto;
     }
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMin}) {
+    @media (max-width: ${SCREEN_WIDTH.lTop}) {
         svg {
             width: 16rem;
         }
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         flex-direction: column;
         align-items: center;
         svg {
@@ -77,19 +77,19 @@ const DescriptionContainer = styled(Box)`
     background-color: ${COLOR.midnightGreen};
     padding: 4rem 6rem;
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         padding: 2rem 3rem;
     }
 `;
 
 const StyledText = styled.p`
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.xlarge};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.l};
     color: ${COLOR.white};
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
-        font-size: ${FONT_SIZE.normal};
-        line-height: ${LINE_HEIGHT.medium};
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        font-size: ${FONT_SIZE.m};
+        line-height: ${LINE_HEIGHT.m};
     }
 `;
 

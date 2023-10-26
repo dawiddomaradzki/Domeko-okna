@@ -76,10 +76,10 @@ const Styled = styled(Memoized)`
     justify-content: space-between;
     padding-top: 8rem;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
     }
 `;
@@ -90,7 +90,7 @@ const StyledFrame = styled.iframe`
     object-fit: cover;
     border: 0;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         height: 400px;
     }
 `;
@@ -98,7 +98,7 @@ const StyledFrame = styled.iframe`
 const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
     }
@@ -114,7 +114,7 @@ const ButtonWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         flex-direction: column;
     }
 `;
@@ -124,7 +124,7 @@ const StyledButton = styled(Button)`
     margin: 0 0 0 1.5rem;
     background-color: ${COLOR.grey};
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         margin: 1.5rem 0 0 0;
     }
 `;
@@ -139,7 +139,7 @@ const TextContainer = styled.div`
         padding-bottom: 1.5rem;
     }
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding: 0 0.5rem;
     }
 `;
@@ -150,11 +150,11 @@ const StyledIcon = styled.img`
 `;
 
 const Text = styled.p`
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.m};
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.default};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.xs};
     }
 `;
 

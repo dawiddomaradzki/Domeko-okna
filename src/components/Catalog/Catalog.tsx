@@ -46,10 +46,10 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 8rem;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
     }
 `;
@@ -62,7 +62,7 @@ const StyledButton = styled(Button)`
     width: 250px;
     margin-top: 2.5rem;
 
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         margin-top: 1.5rem;
     }
 `;
@@ -74,7 +74,7 @@ const ImageWrapper = styled.div`
     position: relative;
     bottom: 3rem;
 
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         margin-top: 3rem;
     }
 `;
@@ -90,7 +90,7 @@ const Wrapper = styled.div`
         ${COLOR.ghostWhite} 100%
     );
 
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         flex-direction: column;
     }
 `;
@@ -99,11 +99,11 @@ const Header = styled.p`
     text-align: center;
     color: ${COLOR.ghostWhite};
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.m};
 
-    @media (max-width: ${SCREEN_WIDTH.large}) {
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.m}) {
+        font-size: ${FONT_SIZE.s};
     }
 `;
 export default Styled;

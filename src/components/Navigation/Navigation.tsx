@@ -46,17 +46,17 @@ const Styled = styled(Memoized)`
     display: flex;
     padding: 1rem 2.5rem;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMin}) {
+    @media (max-width: ${SCREEN_WIDTH.lTop}) {
         height: 6rem;
         padding: 0.7rem 2.5rem 0.4rem;
     }
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         height: 6rem;
         padding: 0.7rem 1.5rem 0.4rem;
     }
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         height: 5rem;
         padding: 0.5rem 1.5rem;
     }
@@ -72,7 +72,7 @@ const ImageWrapper = styled(Box)`
             height: 18rem;
         }
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         & svg {
             width: 10rem;
         }
@@ -81,7 +81,7 @@ const ImageWrapper = styled(Box)`
 
 const NavTextWrapper = styled(Box)`
     align-items: center;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         justify-content: center;
     }
 `;
@@ -90,7 +90,7 @@ const NavigationContainer = styled(Box)`
     width: 100%;
     justify-content: space-between;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         flex-direction: column;
     }
 `;
@@ -100,27 +100,27 @@ const Line = styled.div`
     border-bottom: 4px solid ${COLOR.deepCarrotOrange};
     width: 80%;
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         margin-top: 0.5rem;
     }
 `;
 
 const StyledText = styled.p`
     color: ${COLOR.white};
-    font-size: ${FONT_SIZE.medium};
+    font-size: ${FONT_SIZE.l};
     font-weight: ${FONT_WEIGHT.lite};
     margin-right: 3rem;
     cursor: pointer;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         margin: 0 1.5rem;
-        font-size: ${FONT_SIZE.normal};
+        font-size: ${FONT_SIZE.m};
     }
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         margin: 0 0.8rem;
-        font-size: ${FONT_SIZE.normal};
+        font-size: ${FONT_SIZE.m};
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.default};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.xs};
         margin: 0.3rem 0.5rem 0;
     }
 `;

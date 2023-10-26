@@ -43,7 +43,7 @@ const Styled = styled(Memoized)`
 const Container = styled.div`
     display: flex;
     justify-content: space-around;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
         flex-direction: column;
         justify-content: center;
@@ -52,7 +52,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     padding: 0 4rem 0 0;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding: 0;
         display: flex;
         justify-content: center;
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
 const StyledImg = styled.img`
     width: 720px;
 
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -73,21 +73,19 @@ const TextSectionWrapper = styled(Box)`
     flex-direction: column;
     padding: 0 6rem;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding: 0 3rem 2rem;
     }
-
-    /* animation-duration: 2s; */
 `;
 
 const StyledText = styled.p`
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.xlarge};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.l};
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMin}) {
-        font-size: ${FONT_SIZE.normal};
-        line-height: ${LINE_HEIGHT.medium};
+    @media (max-width: ${SCREEN_WIDTH.lTop}) {
+        font-size: ${FONT_SIZE.m};
+        line-height: ${LINE_HEIGHT.m};
     }
 `;
 export default Styled;

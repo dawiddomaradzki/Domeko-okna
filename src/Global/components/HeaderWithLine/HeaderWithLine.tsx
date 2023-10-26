@@ -24,7 +24,7 @@ const Styled = styled(Memoized)`
     display: flex;
     justify-content: center;
     padding-bottom: 4rem;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-bottom: 2rem;
     }
 `;
@@ -46,14 +46,14 @@ const Line = styled.div`
 const StyledHeader = styled.p`
     text-align: center;
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.xlarge};
-    line-height: ${LINE_HEIGHT.xlarge};
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
-        font-size: ${FONT_SIZE.medium};
+    font-size: ${FONT_SIZE.xl};
+    line-height: ${LINE_HEIGHT.l};
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        font-size: ${FONT_SIZE.l};
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.normal};
-        line-height: ${LINE_HEIGHT.medium};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.m};
+        line-height: ${LINE_HEIGHT.m};
     }
 `;
 export default Styled;

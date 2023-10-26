@@ -4,7 +4,6 @@ export const COLOR = {
     midnightGreen: '#0C4A60',
     midnightGreenRGB: 'rgb(12, 74, 96, 0.85)',
     deepCarrotOrange: '#EF6C33',
-    gainsboro: '#E1DDDB',
     ghostWhite: '#F9F9F9',
     silver: '#C6CBC5',
     beige: '#CBBBA0',
@@ -13,11 +12,11 @@ export const COLOR = {
 };
 
 export const FONT_SIZE = {
-    default: '1rem',
-    snormal: '1.3rem',
-    normal: '1.5rem',
-    medium: '2rem',
-    xlarge: '2.75rem',
+    xs: '1rem',
+    s: '1.3rem',
+    m: '1.5rem',
+    l: '2rem',
+    xl: '2.75rem',
 };
 export const FONT_WEIGHT = {
     lite: '300',
@@ -27,19 +26,15 @@ export const FONT_WEIGHT = {
 };
 
 export const LINE_HEIGHT = {
-    small: '10px',
-    normal: '1.5rem',
-    medium: '2rem',
-    xlarge: '2.75rem',
-    xxlarge: '3.5rem',
+    m: '2rem',
+    l: '2.75rem',
+    xl: '3.5rem',
 };
 
 export const SCREEN_WIDTH = {
-    xsmall: '400px',
-    small: '576px',
-    medium: '768px',
-    large: '992px',
-    xlargeMax: '1200px',
-    xlargeMin: '1201px',
-    xxlarge: '1400px',
+    xs: '576px',
+    s: '768px',
+    m: '992px',
+    lBottom: '1200px',
+    lTop: '1201px',
 };

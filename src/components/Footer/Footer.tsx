@@ -80,8 +80,8 @@ const Styled = styled(Memoized)`
     padding: 4rem 1.5rem;
     margin-top: 8rem;
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.s};
         padding: 4rem 1.5rem 2rem;
     }
 `;
@@ -90,7 +90,7 @@ const Container = styled.div`
     margin: auto;
     display: flex;
     justify-content: space-around;
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
@@ -98,7 +98,7 @@ const Container = styled.div`
 `;
 
 const ColumnWrapper = styled.div`
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         margin-bottom: 4rem;
     }
 `;
@@ -110,29 +110,29 @@ const ColumnWrapper2 = styled.div`
 `;
 
 const Text = styled.p`
-    font-size: ${FONT_SIZE.medium};
-    line-height: ${LINE_HEIGHT.medium};
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
-        font-size: ${FONT_SIZE.normal};
+    font-size: ${FONT_SIZE.l};
+    line-height: ${LINE_HEIGHT.m};
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        font-size: ${FONT_SIZE.m};
     }
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         padding-left: 1rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.s};
     }
 `;
 
 const Header = styled.p`
-    font-size: ${FONT_SIZE.medium};
-    line-height: ${LINE_HEIGHT.medium};
+    font-size: ${FONT_SIZE.l};
+    line-height: ${LINE_HEIGHT.m};
     font-weight: ${FONT_WEIGHT.medium};
     padding-bottom: 3rem;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
-        font-size: ${FONT_SIZE.normal};
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        font-size: ${FONT_SIZE.m};
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.s};
     }
 `;
 export default Styled;

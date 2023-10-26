@@ -28,7 +28,7 @@ const App = () => {
             <Pros />
             <WoodWindow />
             <WoodWindowInfo />
-            <SlidingWindow />l
+            <SlidingWindow />
             <SlidingWindowInfo />
             <AlSlidingWindow />
             <Catalog />

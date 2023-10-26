@@ -62,10 +62,10 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     margin-top: 8rem;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         margin-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         margin-top: 2rem;
     }
 `;
@@ -75,7 +75,7 @@ const Wrapper = styled.div`
     background-color: ${COLOR.midnightGreen};
 
     grid-template-columns: repeat(2, 1fr);
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
     }
@@ -85,7 +85,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding: 2.5rem 3rem;
     }
 `;
@@ -98,26 +98,26 @@ const Header = styled.p`
     text-align: center;
     color: ${COLOR.ghostWhite};
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.xlarge};
-    line-height: ${LINE_HEIGHT.xxlarge};
+    font-size: ${FONT_SIZE.xl};
+    line-height: ${LINE_HEIGHT.xl};
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
-        font-size: ${FONT_SIZE.medium};
-        line-height: ${LINE_HEIGHT.xlarge};
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        font-size: ${FONT_SIZE.l};
+        line-height: ${LINE_HEIGHT.l};
     }
 `;
 
 const StyledText = styled.p`
     padding: 0 1rem;
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.xlarge};
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
-        line-height: ${LINE_HEIGHT.medium};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.l};
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        line-height: ${LINE_HEIGHT.m};
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.s};
     }
 `;
 
@@ -128,7 +128,7 @@ const StyledImg = styled.img`
 `;
 
 const ImageContainer = styled.div`
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         height: 500px;
     }
 `;
@@ -142,9 +142,9 @@ const StyledWoodImg = styled.img`
 const StyledWoodText = styled.p`
     padding: 1.5rem 0;
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.medium};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.m};
     text-align: center;
 `;
 
@@ -153,7 +153,7 @@ const ImagesWrapper = styled.div`
     grid-template-columns: repeat(4, 1fr);
     margin-top: 3rem;
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
     }

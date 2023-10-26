@@ -80,10 +80,10 @@ const Styled = styled(Memoized)`
     margin: auto;
     padding-top: 8rem;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
     }
 `;
@@ -93,7 +93,7 @@ const Container = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
     }
@@ -108,11 +108,11 @@ const InfoSection = styled.div`
         fill: ${COLOR.deepCarrotOrange};
         margin-bottom: 6rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding: 4rem 1rem;
     }
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         & svg {
             margin-bottom: 4rem;
         }
@@ -128,28 +128,28 @@ const StyledImg = styled.img`
     width: 100%;
     object-fit: cover;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         height: 600px;
     }
 `;
 
 const Header = styled.p`
     color: ${COLOR.white};
-    font-size: ${FONT_SIZE.medium};
+    font-size: ${FONT_SIZE.l};
     font-weight: ${FONT_WEIGHT.medium};
     text-align: center;
     margin-bottom: 3rem;
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.normal};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.m};
     }
 `;
 const Text = styled.p`
     text-align: center;
     color: ${COLOR.white};
-    font-size: ${FONT_SIZE.medium};
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
-        font-size: ${FONT_SIZE.normal};
-        line-height: ${LINE_HEIGHT.medium};
+    font-size: ${FONT_SIZE.l};
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        font-size: ${FONT_SIZE.m};
+        line-height: ${LINE_HEIGHT.m};
     }
 `;
 export default Styled;

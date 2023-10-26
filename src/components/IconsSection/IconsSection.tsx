@@ -76,13 +76,13 @@ const Styled = styled(Memoized)`
     grid-template-columns: repeat(4, 1fr);
     padding-top: 6rem;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 2rem;
     }
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 1fr;
         grid-row-gap: 2rem;
@@ -95,13 +95,13 @@ const Container = styled(Box)`
 `;
 const StyledHeader = styled.p`
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.medium};
-    line-height: ${LINE_HEIGHT.medium};
+    font-size: ${FONT_SIZE.l};
+    line-height: ${LINE_HEIGHT.m};
 `;
 const StyledText = styled.p`
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.normal};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.m};
 `;
 const StyledTextWrapper = styled.div`
     width: 16rem;

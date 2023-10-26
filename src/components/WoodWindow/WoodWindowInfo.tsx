@@ -87,26 +87,26 @@ const Styled = styled(Memoized)`
     flex-direction: column;
     padding-top: 8rem;
 
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
     }
 `;
 
 const StyledImg = styled.img`
     width: 1200px;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         width: 900px;
     }
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         width: 750px;
     }
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         width: 600px;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         width: 350px;
     }
 `;
@@ -134,22 +134,22 @@ const Square = styled(SquareSVG)`
 `;
 
 const RowText = styled.span`
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.xlarge};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.l};
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
-        line-height: ${LINE_HEIGHT.medium};
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        line-height: ${LINE_HEIGHT.m};
+        font-size: ${FONT_SIZE.s};
     }
 `;
 const BoldRowText = styled.span`
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.xlarge};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.l};
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
-        line-height: ${LINE_HEIGHT.medium};
-        font-size: ${FONT_SIZE.snormal};
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        line-height: ${LINE_HEIGHT.m};
+        font-size: ${FONT_SIZE.s};
     }
 `;
 export default Styled;

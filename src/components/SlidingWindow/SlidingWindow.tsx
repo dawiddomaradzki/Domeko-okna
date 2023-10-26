@@ -74,24 +74,24 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 7rem;
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
     }
 `;
 const MainText = styled.span`
     color: ${COLOR.ghostWhite};
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.default};
-    line-height: ${LINE_HEIGHT.medium};
+    font-size: ${FONT_SIZE.xs};
+    line-height: ${LINE_HEIGHT.m};
 `;
 const Subtext = styled.span`
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.default};
-    line-height: ${LINE_HEIGHT.medium};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.xs};
+    line-height: ${LINE_HEIGHT.m};
 `;
 
 const SubtextWrapper = styled.div`
@@ -110,14 +110,14 @@ const Line = styled.div`
 const ColorText = styled.p`
     padding: 1rem;
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.normal};
-    font-size: ${FONT_SIZE.normal};
-    line-height: ${LINE_HEIGHT.medium};
+    font-weight: ${FONT_WEIGHT.medium};
+    font-size: ${FONT_SIZE.m};
+    line-height: ${LINE_HEIGHT.m};
     text-align: center;
 
-    @media (max-width: ${SCREEN_WIDTH.small}) {
-        font-size: ${FONT_SIZE.default};
-        line-height: ${LINE_HEIGHT.normal};
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.xs};
+        line-height: ${LINE_HEIGHT.m};
     }
 `;
 
@@ -130,18 +130,18 @@ const Color = styled.div<{ color: string }>`
     justify-content: center;
     align-items: center;
 
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         height: 3.5rem;
         width: 8.5rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         width: 6.5rem;
     }
 `;
 const ColorsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         flex-direction: column;
         margin-bottom: 1.5rem;
     }
@@ -152,7 +152,7 @@ const ColorWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: 1.5rem;
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         flex-direction: row;
         justify-content: center;
     }
@@ -162,7 +162,7 @@ const Wrapper = styled.div`
     display: grid;
     background-color: ${COLOR.midnightGreen};
     grid-template-columns: repeat(2, 1fr);
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
     }
@@ -172,10 +172,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    @media (max-width: ${SCREEN_WIDTH.large}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         padding: 2.5rem 3rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding: 2.5rem 0.5rem;
     }
 `;
@@ -188,10 +188,10 @@ const StyledImg = styled.img`
 
 const Image = styled.img`
     width: 600px;
-    @media (max-width: ${SCREEN_WIDTH.medium}) {
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         width: 450px;
     }
-    @media (max-width: ${SCREEN_WIDTH.small}) {
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
         width: 350px;
     }
 `;
@@ -203,7 +203,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    @media (max-width: ${SCREEN_WIDTH.xlargeMax}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         height: 500px;
     }
 `;

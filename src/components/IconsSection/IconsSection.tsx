@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Box } from '@/Global/components/commonComponents';
-import { FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { Header, Text } from '@/Global/components/commonComponents';
+import { LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import SmileIcon from '@/resources/Icons/face-smile-solid.svg';
 import ScrewIcon from '@/resources/Icons/screwdriver-wrench-solid.svg';
 import RampIcon from '@/resources/Icons/truck-ramp-box-solid.svg';
@@ -88,19 +88,13 @@ const Styled = styled(Memoized)`
         grid-row-gap: 2rem;
     }
 `;
-const Container = styled(Box)`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
 `;
-const StyledHeader = styled.p`
-    font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.l};
-    line-height: ${LINE_HEIGHT.m};
-`;
-const StyledText = styled.p`
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.m};
+const StyledHeader = styled(Header)``;
+const StyledText = styled(Text)`
     line-height: ${LINE_HEIGHT.m};
 `;
 const StyledTextWrapper = styled.div`

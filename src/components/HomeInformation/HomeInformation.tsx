@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Box } from '@/Global/components/commonComponents';
+import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import aboutUsPhoto from '@/resources/Images/aboutUsPhoto.jpg';
 
 interface HomeInformationProps {
@@ -18,7 +18,7 @@ const HomeInformation = ({ className }: HomeInformationProps) => {
                 <TextSectionWrapper>
                     <StyledText>
                         Jesteśmy dynamiczną firmą, która oferuje kompleksowe usługi w dziedzinie doradztwa, transportu
-                        oraz sprzedaży okien i drzwi. Nasza firma jest z dumna z bycia partnerem renomowanej marki Wood
+                        oraz sprzedaży okien i drzwi. Nasza firma jest dumna z bycia partnerem renomowanej marki Wood
                         Natural, co pozwala nam dostarczać najwyższej jakości produkty i usługi dla naszych klientów.
                         Jeśli potrzebujesz profesjonalnego wsparcia w wyborze okien i drzwi, skontaktuj się z nami.
                         Jesteśmy gotowi odpowiedzieć na Twoje pytania i zapewnić rozwiązania, które spełnią Twoje
@@ -69,8 +69,9 @@ const StyledImg = styled.img`
     }
 `;
 
-const TextSectionWrapper = styled(Box)`
+const TextSectionWrapper = styled.div`
     flex-direction: column;
+    display: flex;
     padding: 0 6rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
@@ -78,11 +79,7 @@ const TextSectionWrapper = styled(Box)`
     }
 `;
 
-const StyledText = styled.p`
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.l};
-
+const StyledText = styled(Text)`
     @media (max-width: ${SCREEN_WIDTH.lTop}) {
         font-size: ${FONT_SIZE.m};
         line-height: ${LINE_HEIGHT.m};

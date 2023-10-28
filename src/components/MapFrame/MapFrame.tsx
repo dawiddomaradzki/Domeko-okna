@@ -2,10 +2,11 @@ import { memo } from 'react';
 import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
+import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, SCREEN_WIDTH } from '@/Global/globalStyles';
 import arrow from '@/resources/Icons/arrow-up-right-from-square-solid.svg';
-import WGTtextSVG from '@/resources/Icons/wgt-text-logo.svg';
+import WGTSVG from '@/resources/Icons/wgt-text-logo.svg';
 
 interface MapFrameProps {
     className?: string;
@@ -18,32 +19,32 @@ const MapFrame = ({ className }: MapFrameProps) => {
             <Container>
                 <TextContainer>
                     <div>
-                        <Text>
+                        <StyledText>
                             Jesteśmy firmą zlokalizowaną we Włoszczowie na ulicy Przedborskiej 45. Jeśli potrzebujesz
                             profesjonalnego wsparcia w dziedzinie doradztwa, transportu lub planujesz zakup okien i
                             drzwi, skontaktuj się z nami.
-                        </Text>
+                        </StyledText>
                     </div>
                     <div>
-                        <Text>W naszym salonie oferujemy również:</Text>
+                        <StyledText>W naszym salonie oferujemy również:</StyledText>
                         <TextWrapper>
                             <Line />
-                            <Text>Płytki</Text>
+                            <StyledText>Płytki</StyledText>
                         </TextWrapper>
                         <TextWrapper>
                             <Line />
-                            <Text>Wizualizacje łazienek</Text>
+                            <StyledText>Wizualizacje łazienek</StyledText>
                         </TextWrapper>
                         <TextWrapper>
                             <Line />
-                            <Text>Artykuły budowlane</Text>
+                            <StyledText>Artykuły budowlane</StyledText>
                         </TextWrapper>
                     </div>
                     <div>
-                        <Text>Sprawdź również pełną ofertę naszego partnera!</Text>
+                        <StyledText>Sprawdź również pełną ofertę naszego partnera!</StyledText>
                     </div>
                     <ButtonWrapper>
-                        <Img src={WGTtextSVG} alt="WGTtextSVG" />
+                        <Img src={WGTSVG} alt="WGTSVG" />
                         <StyledButton variant="secondary" size="lg">
                             <a href="https://www.woodnatural.pl/" target="blank">
                                 Sprawdź
@@ -149,10 +150,7 @@ const StyledIcon = styled.img`
     padding-left: 1rem;
 `;
 
-const Text = styled.p`
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.m};
-
+const StyledText = styled(Text)`
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         font-size: ${FONT_SIZE.xs};
     }

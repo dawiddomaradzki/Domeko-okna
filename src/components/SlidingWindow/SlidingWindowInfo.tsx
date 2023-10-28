@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
+import { TextSpan } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as SquareSVG } from '@/resources/Icons/square-solid.svg';
@@ -105,19 +106,14 @@ const Square = styled(SquareSVG)`
     fill: ${COLOR.deepCarrotOrange};
 `;
 
-const RowText = styled.span`
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.l};
-
+const RowText = styled(TextSpan)`
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
         font-size: ${FONT_SIZE.s};
     }
 `;
-const BoldRowText = styled.span`
+const BoldRowText = styled(TextSpan)`
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.l};
 
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};

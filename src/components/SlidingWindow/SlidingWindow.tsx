@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
+import { SmallSpan, Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import slidingWindow from '@/resources/Images/slidingWindow.png';
@@ -81,18 +82,10 @@ const Styled = styled(Memoized)`
         padding-top: 2rem;
     }
 `;
-const MainText = styled.span`
-    color: ${COLOR.ghostWhite};
+const MainText = styled(SmallSpan)`
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.xs};
-    line-height: ${LINE_HEIGHT.m};
 `;
-const Subtext = styled.span`
-    color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.xs};
-    line-height: ${LINE_HEIGHT.m};
-`;
+const Subtext = styled(SmallSpan)``;
 
 const SubtextWrapper = styled.div`
     display: flex;
@@ -107,12 +100,8 @@ const Line = styled.div`
     top: 14px;
 `;
 
-const ColorText = styled.p`
+const ColorText = styled(Text)`
     padding: 1rem;
-    color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.m};
     text-align: center;
 
     @media (max-width: ${SCREEN_WIDTH.xs}) {
@@ -162,6 +151,8 @@ const Wrapper = styled.div`
     display: grid;
     background-color: ${COLOR.midnightGreen};
     grid-template-columns: repeat(2, 1fr);
+    color: ${COLOR.ghostWhite};
+
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;

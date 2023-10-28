@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Box } from '@/Global/components/commonComponents';
+import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as AGMPartnerLogoSVG } from '@/resources/Icons/AGMPartner.svg';
 import { ReactComponent as DomekoLogoNoBackgroundSVG } from '@/resources/Icons/domekoLogoNoBackgroundBlack.svg';
 
@@ -47,7 +47,8 @@ const Styled = styled(Memoized)`
     }
 `;
 
-const IconsContainer = styled(Box)`
+const IconsContainer = styled.div`
+    display: flex;
     justify-content: space-around;
     padding: 1rem 0 4rem 0;
     svg {
@@ -73,7 +74,8 @@ const IconsContainer = styled(Box)`
     }
 `;
 
-const DescriptionContainer = styled(Box)`
+const DescriptionContainer = styled.div`
+    display: flex;
     background-color: ${COLOR.midnightGreen};
     padding: 4rem 6rem;
 
@@ -82,10 +84,7 @@ const DescriptionContainer = styled(Box)`
     }
 `;
 
-const StyledText = styled.p`
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.l};
+const StyledText = styled(Text)`
     color: ${COLOR.white};
     @media (max-width: ${SCREEN_WIDTH.s}) {
         font-size: ${FONT_SIZE.m};

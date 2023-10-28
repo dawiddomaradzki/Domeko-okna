@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Box } from '@/Global/components/commonComponents';
 import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as DomekoLogoNoBackgroundSVG } from '@/resources/Icons/domekoLogoNoBackgroundWhite.svg';
 
@@ -62,7 +61,8 @@ const Styled = styled(Memoized)`
     }
 `;
 
-const ImageWrapper = styled(Box)`
+const ImageWrapper = styled.div`
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -79,14 +79,16 @@ const ImageWrapper = styled(Box)`
     }
 `;
 
-const NavTextWrapper = styled(Box)`
+const NavTextWrapper = styled.div`
+    display: flex;
     align-items: center;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         justify-content: center;
     }
 `;
 
-const NavigationContainer = styled(Box)`
+const NavigationContainer = styled.div`
+    display: flex;
     width: 100%;
     justify-content: space-between;
 

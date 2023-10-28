@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
+import { SmallSpan } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import poolWindow from '@/resources/Images/poolWindow.png';
@@ -81,18 +82,10 @@ const Styled = styled(Memoized)`
         padding-top: 2rem;
     }
 `;
-const MainText = styled.p`
-    color: ${COLOR.ghostWhite};
+const MainText = styled(SmallSpan)`
     font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.xs};
-    line-height: ${LINE_HEIGHT.m};
 `;
-const Subtext = styled.span`
-    color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.xs};
-    line-height: ${LINE_HEIGHT.m};
-`;
+const Subtext = styled(SmallSpan)``;
 
 const SubtextWrapper = styled.div`
     display: flex;
@@ -109,7 +102,6 @@ const Line = styled.div`
 
 const ColorText = styled.p`
     padding: 1rem;
-    color: ${COLOR.ghostWhite};
     font-weight: ${FONT_WEIGHT.medium};
     font-size: ${FONT_SIZE.m};
     line-height: ${LINE_HEIGHT.m};
@@ -162,6 +154,8 @@ const Wrapper = styled.div`
     display: grid;
     background-color: ${COLOR.midnightGreen};
     grid-template-columns: repeat(2, 1fr);
+    color: ${COLOR.ghostWhite};
+
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;

@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { MainHeader, Text } from '@/Global/components/commonComponents';
+import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import larch from '@/resources/Images/larch.png';
 import meranti from '@/resources/Images/meranti.png';
 import oak from '@/resources/Images/oak.png';
@@ -19,8 +19,8 @@ const WoodWindow = ({ className }: WoodWindowProps) => {
             <Wrapper>
                 <Container>
                     <HeaderWrapper>
-                        <Header>Okna drewniane</Header>
-                        <Header>WOOD Natural</Header>
+                        <StyledHeader>Okna drewniane</StyledHeader>
+                        <StyledHeader>WOOD Natural</StyledHeader>
                     </HeaderWrapper>
                     <div>
                         <StyledText>
@@ -94,25 +94,13 @@ const HeaderWrapper = styled.div`
     margin-bottom: 3rem;
 `;
 
-const Header = styled.p`
-    text-align: center;
+const StyledHeader = styled(MainHeader)`
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.bold};
-    font-size: ${FONT_SIZE.xl};
-    line-height: ${LINE_HEIGHT.xl};
-
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        font-size: ${FONT_SIZE.l};
-        line-height: ${LINE_HEIGHT.l};
-    }
 `;
 
-const StyledText = styled.p`
+const StyledText = styled(Text)`
     padding: 0 1rem;
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.l};
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
     }
@@ -139,12 +127,9 @@ const StyledWoodImg = styled.img`
     height: 3.75rem;
 `;
 
-const StyledWoodText = styled.p`
+const StyledWoodText = styled(Text)`
     padding: 1.5rem 0;
     color: ${COLOR.ghostWhite};
-    font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.m};
-    line-height: ${LINE_HEIGHT.m};
     text-align: center;
 `;
 

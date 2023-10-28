@@ -1,7 +1,8 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { Header } from '@/Global/components/commonComponents';
+import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import call from '@/resources/Icons/call.svg';
 import email from '@/resources/Icons/email.svg';
 import facebook from '@/resources/Icons/facebook.svg';
@@ -16,20 +17,20 @@ const Footer = ({ className }: FooterProps) => {
         <div id="contact" className={className}>
             <Container>
                 <ColumnWrapper>
-                    <Header>KONTAKT</Header>
+                    <StyledHeader>KONTAKT</StyledHeader>
                     <ColumnWrapper2>
                         <img src={call} alt="call" />
-                        <Text>
+                        <StyledText>
                             <a href="tel:+41 394 58 47">+41 394 58 47</a>
-                        </Text>
+                        </StyledText>
                         <img src={email} alt="email" />
-                        <Text>
+                        <StyledText>
                             <a href="mailto:info@domeko.eu" rel="nofollow noreferrer">
                                 info@domeko.eu
                             </a>
-                        </Text>
+                        </StyledText>
                         <img src={facebook} alt="facebook" />
-                        <Text>
+                        <StyledText>
                             <a
                                 href="https://www.facebook.com/Domeko-W%C5%82oszczowa-564951136912778/"
                                 target="blank"
@@ -37,35 +38,35 @@ const Footer = ({ className }: FooterProps) => {
                             >
                                 facebook
                             </a>
-                        </Text>
+                        </StyledText>
                     </ColumnWrapper2>
                 </ColumnWrapper>
                 <ColumnWrapper>
-                    <Header>GODZINY PRACY</Header>
+                    <StyledHeader>GODZINY PRACY</StyledHeader>
                     <ColumnWrapper2>
                         <img src={location} alt="logo" />
-                        <Text>pn-pt: 08:00 - 17:00</Text>
+                        <StyledText>pn-pt: 08:00 - 17:00</StyledText>
                         <div />
-                        <Text>sb: 08:00 - 14:00</Text>
+                        <StyledText>sb: 08:00 - 14:00</StyledText>
                         <div />
-                        <Text>nd: nieczynne</Text>
+                        <StyledText>nd: nieczynne</StyledText>
                     </ColumnWrapper2>
                 </ColumnWrapper>
                 <ColumnWrapper>
-                    <Header>LOKALIZACJA</Header>
+                    <StyledHeader>LOKALIZACJA</StyledHeader>
                     <ColumnWrapper2>
                         <img src={location} alt="location" />
-                        <Text>
+                        <StyledText>
                             <a href="https://goo.gl/maps/fjd2s9bmYHuYsVnN9" target="blank" rel="nofollow noreferrer">
                                 ul. Przedborska 45
                             </a>
-                        </Text>
+                        </StyledText>
                         <div />
-                        <Text>
+                        <StyledText>
                             <a href="https://goo.gl/maps/fjd2s9bmYHuYsVnN9" target="blank" rel="nofollow noreferrer">
                                 29-100 Włoszczowa
                             </a>
-                        </Text>
+                        </StyledText>
                     </ColumnWrapper2>
                 </ColumnWrapper>
             </Container>
@@ -109,9 +110,9 @@ const ColumnWrapper2 = styled.div`
     grid-row-gap: 2rem;
 `;
 
-const Text = styled.p`
-    font-size: ${FONT_SIZE.l};
-    line-height: ${LINE_HEIGHT.m};
+const StyledText = styled(Header)`
+    font-weight: ${FONT_WEIGHT.medium};
+
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         font-size: ${FONT_SIZE.m};
     }
@@ -123,10 +124,7 @@ const Text = styled.p`
     }
 `;
 
-const Header = styled.p`
-    font-size: ${FONT_SIZE.l};
-    line-height: ${LINE_HEIGHT.m};
-    font-weight: ${FONT_WEIGHT.medium};
+const StyledHeader = styled(Header)`
     padding-bottom: 3rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         font-size: ${FONT_SIZE.m};

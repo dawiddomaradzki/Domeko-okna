@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
+import { Header, Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as HammerSvg } from '@/resources/Icons/hammer.svg';
 import { ReactComponent as LeafSvg } from '@/resources/Icons/leaf.svg';
 import { ReactComponent as PanoramaSvg } from '@/resources/Icons/panorama.svg';
@@ -22,53 +23,55 @@ const Pros = ({ className }: ProsProps) => {
         <div className={className}>
             <HeaderWithLine text="Właściwości i zalety naszych okien" />
             <Container>
-                <PictureSection data-aos="fade-right" data-aos-anchor-placement="center-bottom">
+                <div data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                     <StyledImg src={workers} alt="workers" />
-                </PictureSection>
+                </div>
                 <InfoSection data-aos="fade-in" data-aos-anchor-placement="center-bottom">
                     <PlugSvg />
-                    <Header>ENERGOOSZCZĘDNOŚĆ</Header>
-                    <Text>
+                    <StyledHeader>ENERGOOSZCZĘDNOŚĆ</StyledHeader>
+                    <StyledText>
                         Okna drewniane WOOD GLASS TEAM są wyjątkowo szczelne i ciepłe. Dzięki znakomitym parametrom
                         zapewnią komfortową temperaturę w domu oraz zmniejszą zużycie energii. Pozwala to na
                         oszczędności związane z ogrzewaniem domu.
-                    </Text>
+                    </StyledText>
                 </InfoSection>
-                <PictureSection data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                <div data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                     <StyledImg src={womenBlanket} alt="womenBlanket" />
-                </PictureSection>
+                </div>
                 <InfoSection data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                     <HammerSvg />
-                    <Header>TRWAŁOŚĆ</Header>
-                    <Text>
+                    <StyledHeader>TRWAŁOŚĆ</StyledHeader>
+                    <StyledText>
                         Nasze okna są stworzone z wyselekcjonowanego drewna, przez co są bardzo trwałe, wykazują dużą
                         odporność na czynniki atmosferyczne. Nawet po wielu latach będą Cię zachwycać swoją estetyką i
                         komfortem użytkowania.
-                    </Text>
+                    </StyledText>
                 </InfoSection>
-                <PictureSection data-aos="fade-in" data-aos-anchor-placement="center-bottom">
+                <div data-aos="fade-in" data-aos-anchor-placement="center-bottom">
                     <StyledImg src={greenView} alt="greenView" />
-                </PictureSection>
+                </div>
                 <InfoSection data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                     <LeafSvg />
-                    <Header>EKOLOGIA</Header>
-                    <Text>Drewno jest zasobem odnawialnym. Wybierając okna drewniane dbasz o ekologię.</Text>
+                    <StyledHeader>EKOLOGIA</StyledHeader>
+                    <StyledText>
+                        Drewno jest zasobem odnawialnym. Wybierając okna drewniane dbasz o ekologię.
+                    </StyledText>
                 </InfoSection>
-                <PictureSection data-aos="fade-right" data-aos-anchor-placement="center-bottom">
+                <div data-aos="fade-right" data-aos-anchor-placement="center-bottom">
                     <StyledImg src={chairsView} alt="chairsView" />
-                </PictureSection>
+                </div>
                 <InfoSection data-aos="fade-in" data-aos-anchor-placement="center-bottom">
                     <PanoramaSvg />
-                    <Header>PIĘKNO</Header>
-                    <Text>
+                    <StyledHeader>PIĘKNO</StyledHeader>
+                    <StyledText>
                         Drewniane okna WOOD GLASS TEAM zachwycą Cię swym ponadczasowym pięknem. Ramy okien z niezwykle
                         szlachetnego materiału jakim jest drewno, nadadzą Twoim wnętrzom wdzięku i niepowtarzalnej
                         atmosfery.
-                    </Text>
+                    </StyledText>
                 </InfoSection>
-                <PictureSection data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                <div data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                     <StyledImg src={brownView} alt="brownView" />
-                </PictureSection>
+                </div>
             </Container>
         </div>
     );
@@ -92,6 +95,7 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0.5rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;
@@ -100,9 +104,10 @@ const Container = styled.div`
 `;
 const InfoSection = styled.div`
     background-color: ${COLOR.midnightGreen};
-    padding: 4rem 2.5rem;
+    padding: 4rem 2.5rem 1rem 2.5rem;
     display: flex;
     flex-direction: column;
+    border-radius: 1rem;
     & svg {
         height: 10rem;
         fill: ${COLOR.deepCarrotOrange};
@@ -119,34 +124,29 @@ const InfoSection = styled.div`
     }
 `;
 
-const PictureSection = styled.div`
-    background-color: ${COLOR.deepCarrotOrange};
-`;
-
 const StyledImg = styled.img`
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 1rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         height: 600px;
     }
 `;
 
-const Header = styled.p`
+const StyledHeader = styled(Header)`
     color: ${COLOR.white};
-    font-size: ${FONT_SIZE.l};
-    font-weight: ${FONT_WEIGHT.medium};
     text-align: center;
     margin-bottom: 3rem;
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         font-size: ${FONT_SIZE.m};
     }
 `;
-const Text = styled.p`
+
+const StyledText = styled(Text)`
     text-align: center;
     color: ${COLOR.white};
-    font-size: ${FONT_SIZE.l};
     @media (max-width: ${SCREEN_WIDTH.s}) {
         font-size: ${FONT_SIZE.m};
         line-height: ${LINE_HEIGHT.m};

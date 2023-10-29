@@ -1,4 +1,6 @@
 import { memo } from 'react';
+import Nav from 'react-bootstrap/Nav';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
@@ -17,18 +19,16 @@ const Navigation = ({ className }: NavigationProps) => {
                     <Line />
                 </ImageWrapper>
                 <NavTextWrapper>
-                    <StyledText>
-                        <a href="#about">O nas</a>
-                    </StyledText>
-                    <StyledText>
-                        <a href="#offer">Oferta</a>
-                    </StyledText>
-                    <StyledText>
-                        <a href="#realization">Nasze realizacje</a>
-                    </StyledText>
-                    <StyledText>
-                        <a href="#contact">Kontakt</a>
-                    </StyledText>
+                    <StyledNavItem>
+                        <StyledNavLink to="/">
+                            <StyledText>Okna i drzwi</StyledText>
+                        </StyledNavLink>
+                    </StyledNavItem>
+                    <StyledNavItem>
+                        <StyledNavLink to="/shop">
+                            <StyledText>Domeko salon</StyledText>
+                        </StyledNavLink>
+                    </StyledNavItem>
                 </NavTextWrapper>
             </NavigationContainer>
         </div>
@@ -61,6 +61,17 @@ const Styled = styled(Memoized)`
     }
 `;
 
+const StyledNavLink = styled(NavLink)`
+    &.active {
+        p::after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: ${COLOR.deepCarrotOrange};
+            display: block;
+        }
+    }
+`;
 const ImageWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -107,11 +118,17 @@ const Line = styled.div`
     }
 `;
 
+const StyledNavItem = styled(Nav.Item)`
+    margin-right: 3rem;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        margin: 0;
+    }
+`;
+
 const StyledText = styled.p`
     color: ${COLOR.white};
     font-size: ${FONT_SIZE.l};
     font-weight: ${FONT_WEIGHT.lite};
-    margin-right: 3rem;
     cursor: pointer;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         margin: 0 1.5rem;

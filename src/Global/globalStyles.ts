@@ -8,7 +8,8 @@ export const COLOR = {
     silver: '#C6CBC5',
     beige: '#CBBBA0',
     brown: '#634E42',
-    grey: '#354649',
+    grey: '#323234',
+    shark: '#212529',
 };
 
 export const FONT_SIZE = {

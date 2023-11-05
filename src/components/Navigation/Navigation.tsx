@@ -1,6 +1,6 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
@@ -11,6 +11,12 @@ interface NavigationProps {
 }
 
 const Navigation = ({ className }: NavigationProps) => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
         <div className={className}>
             <NavigationContainer>
@@ -26,7 +32,7 @@ const Navigation = ({ className }: NavigationProps) => {
                     </StyledNavItem>
                     <StyledNavItem>
                         <StyledNavLink to="/shop">
-                            <StyledText>Domeko salon</StyledText>
+                            <StyledText>Projektowanie i wnętrza</StyledText>
                         </StyledNavLink>
                     </StyledNavItem>
                 </NavTextWrapper>

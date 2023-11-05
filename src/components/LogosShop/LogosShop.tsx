@@ -1,0 +1,50 @@
+import { memo } from 'react';
+import styled from 'styled-components';
+
+import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
+import { SCREEN_WIDTH } from '@/Global/globalStyles';
+import { ReactComponent as AllegroSVG } from '@/resources/Icons/Allegro.svg';
+import { ReactComponent as FacebookSVG } from '@/resources/Icons/FacebookWord.svg';
+
+interface LogosShopProps {
+    className?: string;
+}
+
+const LogosShop = ({ className }: LogosShopProps) => {
+    return (
+        <div className={className}>
+            <HeaderWithLine text="Sprawdź nas" />
+            <IconsWrapper>
+                <a href="https://www.facebook.com/Domeko-W%C5%82oszczowa-564951136912778/" target="blank">
+                    <FacebookSVG />
+                </a>
+                <a href="https://allegro.pl/uzytkownik/radek_domeko" target="_blank" rel="noreferrer">
+                    <AllegroSVG />
+                </a>
+            </IconsWrapper>
+        </div>
+    );
+};
+
+const Memoized = memo(LogosShop);
+const Styled = styled(Memoized)`
+    max-width: 1800px;
+    margin: auto;
+    padding-top: 6rem;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        padding-top: 3rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        padding-top: 2rem;
+    }
+`;
+
+const IconsWrapper = styled.div`
+    display: flex;
+    justify-content: space-around;
+
+    & svg {
+        cursor: pointer;
+    }
+`;
+export default Styled;

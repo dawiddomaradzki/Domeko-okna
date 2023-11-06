@@ -13,6 +13,7 @@ export const COLOR = {
 };
 
 export const FONT_SIZE = {
+    xxs: '0.8rem',
     xs: '1rem',
     s: '1.3rem',
     m: '1.5rem',
@@ -27,6 +28,7 @@ export const FONT_WEIGHT = {
 };
 
 export const LINE_HEIGHT = {
+    s: '1.2rem',
     m: '2rem',
     l: '2.75rem',
     xl: '3.5rem',

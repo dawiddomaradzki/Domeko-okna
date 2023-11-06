@@ -101,6 +101,9 @@ const StyledButton = styled(Button)`
 const ImagesWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: ${SCREEN_WIDTH.m}) {
+        /* grid-template-columns: 1fr; */
+    }
 `;
 
 const ImageWrapper = styled.div`
@@ -121,6 +124,10 @@ const Wrapper = styled.div`
     border-radius: 16px;
     margin: 0 1rem;
     @media (max-width: ${SCREEN_WIDTH.m}) {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.s}) {
         flex-direction: column;
     }
 `;

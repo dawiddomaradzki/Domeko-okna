@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Header, Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import budowlanka from '@/resources/Images/budowlanka.png';
 import door from '@/resources/Images/door.png';
 import slab from '@/resources/Images/slab.png';
@@ -99,6 +99,15 @@ const StyledHeader = styled(Header)`
 
 const StyledText = styled(Text)`
     padding: 0 4rem 2rem;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        padding: 0 2rem 1rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        line-height: ${LINE_HEIGHT.m};
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.s};
+    }
 `;
 
 const Container = styled.div`

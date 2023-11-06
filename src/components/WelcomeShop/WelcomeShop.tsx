@@ -2,7 +2,7 @@ import { memo } from 'react';
 import styled from 'styled-components';
 
 import { Text } from '@/Global/components/commonComponents';
-import { COLOR, FONT_SIZE, LINE_HEIGHT } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import front from '@/resources/Images/front.png';
 
 interface WelcomeShopProps {
@@ -48,6 +48,14 @@ const Wrapper = styled.div`
 const StyledText = styled(Text)`
     line-height: ${LINE_HEIGHT.m};
     font-size: ${FONT_SIZE.s};
+    @media (max-width: ${SCREEN_WIDTH.lTop}) {
+        font-size: ${FONT_SIZE.s};
+        line-height: ${LINE_HEIGHT.m};
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.xxs};
+        line-height: ${LINE_HEIGHT.s};
+    }
 `;
 
 const StyledCardBody = styled.div`
@@ -59,5 +67,14 @@ const StyledCardBody = styled.div`
     position: absolute;
     bottom: 10%;
     color: ${COLOR.ghostWhite};
+    @media (max-width: ${SCREEN_WIDTH.lTop}) {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        padding: 1rem;
+        margin: 0 1rem;
+        bottom: 5%;
+    }
 `;
 export default Styled;

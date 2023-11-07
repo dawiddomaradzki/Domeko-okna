@@ -23,19 +23,12 @@ const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
                         wszystkie Twoje oczekiwania. Zapoznaj się z producentami z którymi współpracuje nasz salon.
                     </StyledText>
                 </div>
+
                 <ImagesWrapper>
                     <ImageWrapper>
-                        <Image src={effector} alt="effector" />
-                    </ImageWrapper>
-                    <ImageWrapper>
-                        <Image src={eko} alt="eko" />
-                    </ImageWrapper>
-                    <ImageWrapper>
-                        <Image src={kns} alt="kns" />
-                    </ImageWrapper>
-                </ImagesWrapper>
-                <ImagesWrapper>
-                    <ImageWrapper>
+                        <ImageContainer>
+                            <Image src={effector} alt="effector" />
+                        </ImageContainer>
                         <StyledHeader>Effector</StyledHeader>
                         <StyledButton variant="secondary" size="lg">
                             <a href="https://www.effector.pl/" target="blank">
@@ -44,6 +37,9 @@ const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
                         </StyledButton>
                     </ImageWrapper>
                     <ImageWrapper>
+                        <ImageContainer>
+                            <Image src={eko} alt="eko" />
+                        </ImageContainer>
                         <StyledHeader>Eko okna</StyledHeader>
                         <StyledButton variant="secondary" size="lg">
                             <a href="https://ekookna.pl/" target="blank">
@@ -52,6 +48,9 @@ const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
                         </StyledButton>
                     </ImageWrapper>
                     <ImageWrapper>
+                        <ImageContainer>
+                            <Image src={kns} alt="kns" />
+                        </ImageContainer>
                         <StyledHeader>KNS okna</StyledHeader>
                         <StyledButton variant="secondary" size="lg">
                             <a href="https://knsokna.pl/" target="blank">
@@ -99,11 +98,17 @@ const StyledButton = styled(Button)`
 `;
 
 const ImagesWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-around;
     @media (max-width: ${SCREEN_WIDTH.m}) {
-        /* grid-template-columns: 1fr; */
+        flex-direction: column;
     }
+`;
+
+const ImageContainer = styled.div`
+    height: 250px;
+    display: flex;
+    align-items: center;
 `;
 
 const ImageWrapper = styled.div`
@@ -111,6 +116,10 @@ const ImageWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    & > div:last-of-type {
+        justify-content: end;
+    }
 
     @media (max-width: ${SCREEN_WIDTH.m}) {
         margin-top: 3rem;
@@ -140,6 +149,7 @@ const StyledHeader = styled(Header)`
 
     @media (max-width: ${SCREEN_WIDTH.m}) {
         font-size: ${FONT_SIZE.s};
+        padding: 1rem 0;
     }
 `;
 export default Styled;

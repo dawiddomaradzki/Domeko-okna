@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, SCREEN_WIDTH } from '@/Global/globalStyles';
 import assortmentPictures from '@/resources/Images/Assortment';
 import visualisationPictures from '@/resources/Images/Visualisation';
 
@@ -22,17 +22,17 @@ const GalleryShop = ({ className }: GalleryShopProps) => {
             <HeaderWithLine text="Galeria" />
             <Wrapper>
                 <Tabs fill activeKey={tab} onSelect={tabName => setTab(tabName ?? 'assortment')}>
-                    <Tab eventKey="assortment" title={<Text>Asortyment</Text>}>
+                    <Tab eventKey="assortment" title={<StyledText>Asortyment</StyledText>}>
                         <ImageGalleryWrapper>
                             <ImageGallery items={assortmentPictures} showPlayButton={false} showIndex={true} />
                         </ImageGalleryWrapper>
                     </Tab>
-                    <Tab eventKey="visualisations" title={<Text>Wizualizacje</Text>}>
+                    <Tab eventKey="visualisations" title={<StyledText>Wizualizacje</StyledText>}>
                         <ImageGalleryWrapper>
                             <ImageGallery items={visualisationPictures} showPlayButton={false} showIndex={true} />
                         </ImageGalleryWrapper>
                     </Tab>
-                    <Tab eventKey="doors" title={<Text>Drzwi</Text>}>
+                    <Tab eventKey="doors" title={<StyledText>Drzwi</StyledText>}>
                         <ImageGalleryWrapper>
                             <ImageGallery items={assortmentPictures} showPlayButton={false} showIndex={true} />
                         </ImageGalleryWrapper>
@@ -48,7 +48,6 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
     padding-top: 6rem;
-    margin: 0 1rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
@@ -60,6 +59,15 @@ const Styled = styled(Memoized)`
 const ImageGalleryWrapper = styled.div`
     background-color: ${COLOR.midnightGreen};
     padding-top: 1rem;
+`;
+
+const StyledText = styled(Text)`
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        font-size: ${FONT_SIZE.s};
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        font-size: ${FONT_SIZE.xs};
+    }
 `;
 
 const Wrapper = styled.div`
@@ -78,6 +86,12 @@ const Wrapper = styled.div`
     }
     & button {
         color: ${COLOR.black};
+    }
+
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        & button {
+            padding: 0.5rem;
+        }
     }
 `;
 export default Styled;

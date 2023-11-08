@@ -8,6 +8,7 @@ import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, SCREEN_WIDTH } from '@/Global/globalStyles';
 import assortmentPictures from '@/resources/Images/Assortment';
+import doorPictures from '@/resources/Images/Door';
 import visualisationPictures from '@/resources/Images/Visualisation';
 
 interface GalleryShopProps {
@@ -34,7 +35,7 @@ const GalleryShop = ({ className }: GalleryShopProps) => {
                     </Tab>
                     <Tab eventKey="doors" title={<StyledText>Drzwi</StyledText>}>
                         <ImageGalleryWrapper>
-                            <ImageGallery items={assortmentPictures} showPlayButton={false} showIndex={true} />
+                            <ImageGallery items={doorPictures} showPlayButton={false} showIndex={true} />
                         </ImageGalleryWrapper>
                     </Tab>
                 </Tabs>

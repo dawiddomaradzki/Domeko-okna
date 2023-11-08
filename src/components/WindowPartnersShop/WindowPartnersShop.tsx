@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import { Header, Text } from '@/Global/components/commonComponents';
+import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import effector from '@/resources/Icons/effector.svg';
 import eko from '@/resources/Icons/eko.svg';
@@ -15,6 +16,7 @@ interface WindowPartnersShopProps {
 const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
     return (
         <div className={className}>
+            <HeaderWithLine text="Okna aluminiowe" />
             <Wrapper>
                 <div>
                     <StyledText>
@@ -130,8 +132,6 @@ const Wrapper = styled.div`
     background: ${COLOR.grey};
     color: ${COLOR.ghostWhite};
     padding: 4rem;
-    border-radius: 16px;
-    margin: 0 1rem;
     @media (max-width: ${SCREEN_WIDTH.m}) {
         flex-direction: column;
         padding: 2rem;

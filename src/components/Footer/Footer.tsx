@@ -6,6 +6,7 @@ import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyl
 import call from '@/resources/Icons/call.svg';
 import email from '@/resources/Icons/email.svg';
 import facebook from '@/resources/Icons/facebook.svg';
+import instagram from '@/resources/Icons/instagram.svg';
 import location from '@/resources/Icons/location.svg';
 
 interface FooterProps {
@@ -37,6 +38,16 @@ const Footer = ({ className }: FooterProps) => {
                                 rel="nofollow noreferrer"
                             >
                                 facebook
+                            </a>
+                        </StyledText>
+                        <img src={instagram} alt="instagram" />
+                        <StyledText>
+                            <a
+                                href="https://www.instagram.com/domekowloszczowa/"
+                                target="blank"
+                                rel="nofollow noreferrer"
+                            >
+                                instagram
                             </a>
                         </StyledText>
                     </ColumnWrapper2>

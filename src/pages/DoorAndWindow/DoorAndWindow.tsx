@@ -12,6 +12,7 @@ import Realizations from '@/components/Realizations/Realizations';
 import SlidingWindow from '@/components/SlidingWindow/SlidingWindow';
 import SlidingWindowInfo from '@/components/SlidingWindow/SlidingWindowInfo';
 import Welcome from '@/components/Welcome/Welcome';
+import WindowPartnersShop from '@/components/WindowPartnersShop/WindowPartnersShop';
 import WoodWindow from '@/components/WoodWindow/WoodWindow';
 import WoodWindowInfo from '@/components/WoodWindow/WoodWindowInfo';
 
@@ -33,6 +34,7 @@ const DoorAndWindow = ({ className }: DoorAndWindowProps) => {
             <SlidingWindowInfo />
             <AlSlidingWindow />
             <Catalog />
+            <WindowPartnersShop />
             <Realizations />
             <MapFrame />
         </div>

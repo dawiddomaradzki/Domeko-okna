@@ -7,6 +7,7 @@ import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import effector from '@/resources/Icons/effector.svg';
 import eko from '@/resources/Icons/eko.svg';
+import fizia from '@/resources/Icons/fizia.svg';
 import kns from '@/resources/Icons/kns.webp';
 
 interface WindowPartnersShopProps {
@@ -16,13 +17,14 @@ interface WindowPartnersShopProps {
 const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
     return (
         <div className={className}>
-            <HeaderWithLine text="Okna aluminiowe" />
+            <HeaderWithLine text="Okna aluminiowe i drzwi" />
             <Wrapper>
                 <div>
                     <StyledText>
-                        Szukasz nowoczesnych, trwałych i eleganckich okien aluminiowych? Mamy dla Ciebie idealne
-                        rozwiązanie! Nasz sklep oferuje również szeroki wybór okien aluminiowych premium, które spełnią
-                        wszystkie Twoje oczekiwania. Zapoznaj się z producentami z którymi współpracuje nasz salon.
+                        Szukasz nowoczesnych, trwałych i eleganckich okien aluminiowych lub drzwi? Mamy dla Ciebie
+                        idealne rozwiązanie! Nasz sklep oferuje również szeroki wybór okien aluminiowych premium oraz
+                        drzwi, które spełnią wszystkie Twoje oczekiwania. Zapoznaj się z producentami, z którymi
+                        współpracuje nasz salon.
                     </StyledText>
                 </div>
 
@@ -31,7 +33,7 @@ const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
                         <ImageContainer>
                             <Image src={effector} alt="effector" />
                         </ImageContainer>
-                        <StyledHeader>Effector</StyledHeader>
+                        <StyledHeader>Effector okna</StyledHeader>
                         <StyledButton variant="secondary" size="lg">
                             <a href="https://www.effector.pl/" target="blank">
                                 Sprawdź
@@ -56,6 +58,17 @@ const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
                         <StyledHeader>KNS okna</StyledHeader>
                         <StyledButton variant="secondary" size="lg">
                             <a href="https://knsokna.pl/" target="blank">
+                                Sprawdź
+                            </a>
+                        </StyledButton>
+                    </ImageWrapper>
+                    <ImageWrapper>
+                        <ImageContainer>
+                            <Image src={fizia} alt="fizia" />
+                        </ImageContainer>
+                        <StyledHeader>Fizia drzwi</StyledHeader>
+                        <StyledButton variant="secondary" size="lg">
+                            <a href="https://www.fizia.pl/" target="blank">
                                 Sprawdź
                             </a>
                         </StyledButton>

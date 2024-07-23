@@ -8,7 +8,6 @@ import HomeInformation from '@/components/HomeInformation/HomeInformation';
 import IconsSection from '@/components/IconsSection/IconsSection';
 import MapFrame from '@/components/MapFrame/MapFrame';
 import Pros from '@/components/Pros/Pros';
-import Realizations from '@/components/Realizations/Realizations';
 import SlidingWindow from '@/components/SlidingWindow/SlidingWindow';
 import SlidingWindowInfo from '@/components/SlidingWindow/SlidingWindowInfo';
 import Welcome from '@/components/Welcome/Welcome';
@@ -35,7 +34,6 @@ const DoorAndWindow = ({ className }: DoorAndWindowProps) => {
             <AlSlidingWindow />
             <Catalog />
             <WindowPartnersShop />
-            <Realizations />
             <MapFrame />
         </div>
     );

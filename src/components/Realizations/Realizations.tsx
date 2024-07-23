@@ -105,7 +105,7 @@ const Memoized = memo(Realizations);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 8rem;
+    padding-top: 6rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
@@ -117,5 +117,15 @@ const Styled = styled(Memoized)`
 
 const ImageGalleryWrapper = styled.div`
     background-color: ${COLOR.grey};
+    padding-top: 1rem;
+
+    & button {
+        color: ${COLOR.ghostWhite};
+    }
+    & button:hover {
+        border-color: ${COLOR.deepCarrotOrange};
+        transition: all 300ms ease-out;
+        color: ${COLOR.deepCarrotOrange};
+    }
 `;
 export default Styled;

@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 
 import DoorAndWindow from '../DoorAndWindow/DoorAndWindow';
+import Gallery from '../Gallery/Gallery';
 import Shop from '../Shop/Shop';
 import NavAndFooter from './NavAndFooter/NavAndFooter';
 
@@ -29,6 +30,14 @@ const Routing = ({ className }: RoutingProps) => {
                     element={
                         <NavAndFooter>
                             <Shop />
+                        </NavAndFooter>
+                    }
+                />
+                <Route
+                    path="gallery"
+                    element={
+                        <NavAndFooter>
+                            <Gallery />
                         </NavAndFooter>
                     }
                 />

@@ -35,7 +35,7 @@ export const LINE_HEIGHT = {
 };
 
 export const SCREEN_WIDTH = {
-    xs: '576px',
+    xs: '620px',
     s: '768px',
     m: '992px',
     lBottom: '1200px',

@@ -48,17 +48,17 @@ const Memoized = memo(GalleryShop);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 6rem;
+    padding-top: 8rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 3rem;
+        padding-top: 6rem;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding-top: 2rem;
+        padding-top: 5rem;
     }
 `;
 
 const ImageGalleryWrapper = styled.div`
-    background-color: ${COLOR.midnightGreen};
+    background-color: ${COLOR.grey};
     padding-top: 1rem;
 `;
 
@@ -78,7 +78,7 @@ const Wrapper = styled.div`
         color: ${COLOR.deepCarrotOrange};
     }
     & button.nav-link.active {
-        background-color: ${COLOR.midnightGreen};
+        background-color: ${COLOR.grey};
         color: ${COLOR.ghostWhite};
     }
     & button.nav-link:hover {
@@ -86,6 +86,9 @@ const Wrapper = styled.div`
         border-color: ${COLOR.deepCarrotOrange};
     }
     & button {
+        color: ${COLOR.ghostWhite};
+    }
+    & button.nav-link {
         color: ${COLOR.black};
     }
 

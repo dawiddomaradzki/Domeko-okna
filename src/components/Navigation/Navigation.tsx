@@ -26,6 +26,11 @@ const Navigation = ({ className }: NavigationProps) => {
                 </ImageWrapper>
                 <NavTextWrapper>
                     <StyledNavItem>
+                        <StyledNavLink to="/gallery">
+                            <StyledText>Galeria</StyledText>
+                        </StyledNavLink>
+                    </StyledNavItem>
+                    <StyledNavItem>
                         <StyledNavLink to="/">
                             <StyledText>Okna i drzwi</StyledText>
                         </StyledNavLink>

@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import GalleryShop from '@/components/GalleryShop/GalleryShop';
 import LogosShop from '@/components/LogosShop/LogosShop';
 import OfferShop from '@/components/OfferShop/OfferShop';
 import VirtualWalk from '@/components/VirtualWalk/VirtualWalk';
@@ -16,7 +15,6 @@ const Shop = ({ className }: ShopProps) => {
         <div className={className}>
             <WelcomeShop />
             <OfferShop />
-            <GalleryShop />
             <VirtualWalk />
             <LogosShop />
         </div>

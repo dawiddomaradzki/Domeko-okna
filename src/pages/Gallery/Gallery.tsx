@@ -11,8 +11,8 @@ interface GalleryProps {
 const Gallery = ({ className }: GalleryProps) => {
     return (
         <div className={className}>
-            <GalleryShop />
             <Realizations />
+            <GalleryShop />
         </div>
     );
 };

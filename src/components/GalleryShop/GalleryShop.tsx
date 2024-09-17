@@ -48,12 +48,12 @@ const Memoized = memo(GalleryShop);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 8rem;
+    padding-top: 5rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 6rem;
+        padding-top: 3rem;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding-top: 5rem;
+        padding-top: 2rem;
     }
 `;
 

@@ -28,6 +28,7 @@ export const FONT_WEIGHT = {
 };
 
 export const LINE_HEIGHT = {
+    xs: '1rem',
     s: '1.2rem',
     m: '2rem',
     l: '2.75rem',

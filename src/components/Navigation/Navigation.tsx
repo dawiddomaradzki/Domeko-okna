@@ -22,7 +22,6 @@ const Navigation = ({ className }: NavigationProps) => {
             <NavigationContainer>
                 <ImageWrapper>
                     <DomekoLogoNoBackgroundSVG />
-                    <Line />
                 </ImageWrapper>
                 <NavTextWrapper>
                     <StyledNavItem>
@@ -51,7 +50,7 @@ const Styled = styled(Memoized)`
     position: fixed;
     z-index: 9999;
     height: 6rem;
-    width: 100%;
+    width: 100vw;
     background-color: ${COLOR.midnightGreenRGB};
     display: flex;
     padding: 1rem 2.5rem;
@@ -67,14 +66,15 @@ const Styled = styled(Memoized)`
     }
 
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        height: 5rem;
-        padding: 0.5rem 1.5rem;
+        height: 4rem;
+        padding: 0.5rem 1rem;
     }
 `;
 
 const StyledNavLink = styled(NavLink)`
     &.active {
         p::after {
+            position: relative;
             content: '';
             height: 2px;
             width: 100%;
@@ -119,16 +119,6 @@ const NavigationContainer = styled.div`
     }
 `;
 
-const Line = styled.div`
-    margin-top: 1rem;
-    border-bottom: 4px solid ${COLOR.deepCarrotOrange};
-    width: 80%;
-
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        margin-top: 0.5rem;
-    }
-`;
-
 const StyledNavItem = styled(Nav.Item)`
     margin-right: 3rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
@@ -144,13 +134,14 @@ const StyledText = styled.p`
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         margin: 0 1.5rem;
         font-size: ${FONT_SIZE.m};
+        margin-bottom: 4px;
     }
     @media (max-width: ${SCREEN_WIDTH.s}) {
         margin: 0 0.8rem;
         font-size: ${FONT_SIZE.m};
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.xs};
+        font-size: ${FONT_SIZE.xxs};
         margin: 0.3rem 0.5rem 0;
     }
 `;

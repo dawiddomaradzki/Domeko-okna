@@ -13,7 +13,7 @@ export const COLOR = {
 };
 
 export const FONT_SIZE = {
-    xxs: '0.8rem',
+    xxs: '0.6rem',
     xs: '1rem',
     s: '1.3rem',
     m: '1.5rem',

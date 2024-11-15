@@ -25,6 +25,13 @@ const Navigation = ({ className }: NavigationProps) => {
                 </ImageWrapper>
                 <NavTextWrapper>
                     <StyledNavItem>
+                        <StyledText>
+                            <a target="blank" href="https://tarasola.pl/">
+                                Tarasola
+                            </a>
+                        </StyledText>
+                    </StyledNavItem>
+                    <StyledNavItem>
                         <StyledNavLink to="/gallery">
                             <StyledText>Galeria</StyledText>
                         </StyledNavLink>
@@ -90,8 +97,8 @@ const ImageWrapper = styled.div`
     align-items: center;
     @media (min-width: 1201px) {
         & svg {
-            width: 18rem;
-            height: 18rem;
+            width: 16rem;
+            height: 16rem;
         }
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
@@ -132,13 +139,13 @@ const StyledText = styled.p`
     font-weight: ${FONT_WEIGHT.lite};
     cursor: pointer;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        margin: 0 1.5rem;
+        margin: 0 1rem;
         font-size: ${FONT_SIZE.m};
         margin-bottom: 4px;
     }
     @media (max-width: ${SCREEN_WIDTH.s}) {
         margin: 0 0.8rem;
-        font-size: ${FONT_SIZE.m};
+        font-size: ${FONT_SIZE.s};
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         font-size: ${FONT_SIZE.xxs};

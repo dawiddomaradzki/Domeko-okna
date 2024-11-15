@@ -47,5 +47,7 @@ const Routing = ({ className }: RoutingProps) => {
 };
 
 const Memoized = memo(Routing);
-const Styled = styled(Memoized)``;
+const Styled = styled(Memoized)`
+    overflow-y: hidden;
+`;
 export default Styled;

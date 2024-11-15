@@ -8,6 +8,7 @@ import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyl
 import effector from '@/resources/Icons/effector.svg';
 import eko from '@/resources/Icons/eko.svg';
 import fizia from '@/resources/Icons/fizia.svg';
+import horman from '@/resources/Icons/hoermann-vector-logo.svg';
 import kns from '@/resources/Icons/kns.webp';
 
 interface WindowPartnersShopProps {
@@ -73,6 +74,17 @@ const WindowPartnersShop = ({ className }: WindowPartnersShopProps) => {
                             </a>
                         </StyledButton>
                     </ImageWrapper>
+                    <ImageWrapper>
+                        <ImageContainer>
+                            <Image src={horman} alt="horman" />
+                        </ImageContainer>
+                        <StyledHeader>Hormann drzwi</StyledHeader>
+                        <StyledButton variant="secondary" size="lg">
+                            <a href="https://www.hormann.pl/" target="blank">
+                                Sprawdź
+                            </a>
+                        </StyledButton>
+                    </ImageWrapper>
                 </ImagesWrapper>
             </Wrapper>
         </div>
@@ -115,7 +127,7 @@ const StyledButton = styled(Button)`
 const ImagesWrapper = styled.div`
     display: flex;
     justify-content: space-around;
-    @media (max-width: ${SCREEN_WIDTH.m}) {
+    @media (max-width: 1360px) {
         flex-direction: column;
     }
 `;

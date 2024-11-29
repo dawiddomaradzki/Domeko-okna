@@ -42,3 +42,11 @@ export const SCREEN_WIDTH = {
     lBottom: '1200px',
     lTop: '1201px',
 };
+
+export const FONT_RESPONSIVE_SIZE = {
+    navigation: `calc(10px + (26 - 10) * ((100vw - 300px) / (1600 - 300)))`,
+    paragraph: `calc(10px + (18 - 10) * ((100vw - 300px) / (1600 - 300)))`,
+    mainHeader: `calc(16px + (26 - 10) * ((100vw - 300px) / (1600 - 300)))`,
+    description: `calc(14px + (20 - 10) * ((100vw - 300px) / (1600 - 300)))`,
+    footer: `calc(16px + (18 - 10) * ((100vw - 300px) / (1600 - 300)))`,
+};

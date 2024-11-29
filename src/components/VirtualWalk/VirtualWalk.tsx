@@ -27,7 +27,7 @@ const Memoized = memo(VirtualWalk);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 6rem;
+    padding-top: 5rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }

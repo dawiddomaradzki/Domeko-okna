@@ -1,8 +1,7 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { SmallSpan } from '@/Global/components/commonComponents';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_RESPONSIVE_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import tarasolaWordLogo from '@/resources/Images/Tarasola/tarasolaWordLogo.png';
 
 interface BannerProps {
@@ -72,41 +71,24 @@ const Image = styled.img`
     }
 `;
 
-const StyledText = styled(SmallSpan)`
+const StyledText = styled.span`
+    font-weight: ${FONT_WEIGHT.medium};
     text-align: center;
     color: ${COLOR.ghostWhite};
     letter-spacing: 0.1rem;
-    @media (max-width: ${SCREEN_WIDTH.m}) {
-        line-height: ${LINE_HEIGHT.s};
-    }
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        line-height: ${LINE_HEIGHT.s};
-        font-size: ${FONT_SIZE.xs};
-    }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        letter-spacing: 0;
-        line-height: ${LINE_HEIGHT.s};
-        font-size: ${FONT_SIZE.xxs};
-    }
+    font-size: ${FONT_RESPONSIVE_SIZE.paragraph};
 `;
+
 const StyledAnchor = styled.a`
     letter-spacing: 0.1rem;
     text-align: center;
     color: ${COLOR.ghostWhite};
+    font-size: ${FONT_RESPONSIVE_SIZE.paragraph};
     font-weight: ${FONT_WEIGHT.medium};
-    font-size: ${FONT_SIZE.xs};
-    line-height: ${LINE_HEIGHT.m};
     cursor: pointer;
 
     :hover {
         color: ${COLOR.black};
-    }
-    @media (max-width: ${SCREEN_WIDTH.m}) {
-        line-height: ${LINE_HEIGHT.s};
-        font-size: ${FONT_SIZE.xxs};
-    }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        letter-spacing: 0;
     }
 `;
 export default Styled;

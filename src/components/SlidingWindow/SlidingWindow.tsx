@@ -74,9 +74,9 @@ const Memoized = memo(SlidingWindow);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 7rem;
+    padding: 5rem 2rem 0;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 3rem;
+        padding: 3rem 2rem 0;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;

@@ -105,9 +105,6 @@ const StyledText = styled(Text)`
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
     }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.s};
-    }
 `;
 
 const Container = styled.div`
@@ -115,7 +112,7 @@ const Container = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 1.5rem;
-    margin: 0 1rem;
+    margin: 0 3rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;

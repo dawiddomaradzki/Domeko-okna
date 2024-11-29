@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import aboutUsPhoto from '@/resources/Images/aboutUsPhoto.jpg';
 
 interface HomeInformationProps {
@@ -60,11 +60,12 @@ const Wrapper = styled.div`
 `;
 
 const StyledImg = styled.img`
-    width: 720px;
+    max-width: 50vw;
+    width: clamp(18.75rem, 50vw, 46.875rem);
 
     @media (max-width: ${SCREEN_WIDTH.m}) {
         height: 100%;
-        width: 100%;
+        max-width: 100%;
         object-fit: cover;
     }
 `;
@@ -72,7 +73,7 @@ const StyledImg = styled.img`
 const TextSectionWrapper = styled.div`
     flex-direction: column;
     display: flex;
-    padding: 0 6rem;
+    padding: 0 4rem 0 6rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding: 0 3rem 2rem;
@@ -80,8 +81,7 @@ const TextSectionWrapper = styled.div`
 `;
 
 const StyledText = styled(Text)`
-    @media (max-width: ${SCREEN_WIDTH.lTop}) {
-        font-size: ${FONT_SIZE.m};
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         line-height: ${LINE_HEIGHT.m};
     }
 `;

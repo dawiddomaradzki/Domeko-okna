@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as AGMPartnerLogoSVG } from '@/resources/Icons/AGMPartner.svg';
 import { ReactComponent as DomekoLogoNoBackgroundSVG } from '@/resources/Icons/domekoLogoNoBackgroundBlack.svg';
 
@@ -36,9 +36,9 @@ const AboutUs = ({ className }: AboutUsProps) => {
 
 const Memoized = memo(AboutUs);
 const Styled = styled(Memoized)`
-    max-width: 1800px;
+    max-width: 1600px;
     margin: auto;
-    padding-top: 8rem;
+    padding-top: 5rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
@@ -48,11 +48,12 @@ const Styled = styled(Memoized)`
 `;
 
 const IconsContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
     padding: 1rem 0 4rem 0;
     svg {
-        width: 25rem;
+        width: 20rem;
         height: auto;
     }
 
@@ -62,8 +63,7 @@ const IconsContainer = styled.div`
         }
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
         svg {
             width: 16rem;
         }
@@ -87,7 +87,6 @@ const DescriptionContainer = styled.div`
 const StyledText = styled(Text)`
     color: ${COLOR.white};
     @media (max-width: ${SCREEN_WIDTH.s}) {
-        font-size: ${FONT_SIZE.m};
         line-height: ${LINE_HEIGHT.m};
     }
 `;

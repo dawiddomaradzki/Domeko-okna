@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Header } from '@/Global/components/commonComponents';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { FooterText } from '@/Global/components/commonComponents';
+import { COLOR, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import call from '@/resources/Icons/call.svg';
 import email from '@/resources/Icons/email.svg';
 import facebook from '@/resources/Icons/facebook.svg';
@@ -90,23 +90,18 @@ const Styled = styled(Memoized)`
     background-color: ${COLOR.midnightGreen};
     color: ${COLOR.ghostWhite};
     padding: 4rem 1.5rem;
-    margin-top: 8rem;
+    margin-top: 5rem;
 
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.s};
-        padding: 4rem 1.5rem 2rem;
+        padding: 2rem 1.5rem 2rem;
     }
 `;
 const Container = styled.div`
     max-width: 1800px;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    @media (max-width: ${SCREEN_WIDTH.m}) {
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
 `;
 
 const ColumnWrapper = styled.div`
@@ -121,27 +116,15 @@ const ColumnWrapper2 = styled.div`
     grid-row-gap: 2rem;
 `;
 
-const StyledText = styled(Header)`
-    font-weight: ${FONT_WEIGHT.medium};
+const StyledText = styled(FooterText)`
+    padding-left: 1rem;
 
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        font-size: ${FONT_SIZE.m};
-    }
     @media (max-width: ${SCREEN_WIDTH.m}) {
-        padding-left: 1rem;
-    }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.s};
     }
 `;
 
-const StyledHeader = styled(Header)`
+const StyledHeader = styled(FooterText)`
     padding-bottom: 3rem;
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        font-size: ${FONT_SIZE.m};
-    }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.s};
-    }
+    line-height: ${LINE_HEIGHT.m};
 `;
 export default Styled;

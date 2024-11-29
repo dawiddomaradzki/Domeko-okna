@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { COLOR, FONT_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_RESPONSIVE_SIZE, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as DomekoLogoNoBackgroundSVG } from '@/resources/Icons/domekoLogoNoBackgroundWhite.svg';
 
 interface NavigationProps {
@@ -62,16 +62,6 @@ const Styled = styled(Memoized)`
     display: flex;
     padding: 1rem 2.5rem;
 
-    @media (max-width: ${SCREEN_WIDTH.lTop}) {
-        height: 6rem;
-        padding: 0.7rem 2.5rem 0.4rem;
-    }
-
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        height: 6rem;
-        padding: 0.7rem 1.5rem 0.4rem;
-    }
-
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         height: 4rem;
         padding: 0.5rem 1rem;
@@ -95,6 +85,7 @@ const ImageWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 1rem;
     @media (min-width: 1201px) {
         & svg {
             width: 16rem;
@@ -111,8 +102,8 @@ const ImageWrapper = styled.div`
 const NavTextWrapper = styled.div`
     display: flex;
     align-items: center;
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        justify-content: center;
+    @media (max-width: ${SCREEN_WIDTH.m}) {
+        justify-content: space-around;
     }
 `;
 
@@ -121,36 +112,23 @@ const NavigationContainer = styled.div`
     width: 100%;
     justify-content: space-between;
 
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         flex-direction: column;
     }
 `;
 
 const StyledNavItem = styled(Nav.Item)`
     margin-right: 3rem;
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+    @media (max-width: ${SCREEN_WIDTH.m}) {
         margin: 0;
     }
 `;
 
 const StyledText = styled.p`
     color: ${COLOR.white};
-    font-size: ${FONT_SIZE.l};
     font-weight: ${FONT_WEIGHT.lite};
     cursor: pointer;
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        margin: 0 1rem;
-        font-size: ${FONT_SIZE.m};
-        margin-bottom: 4px;
-    }
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        margin: 0 0.8rem;
-        font-size: ${FONT_SIZE.s};
-    }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.xxs};
-        margin: 0.3rem 0.5rem 0;
-    }
+    font-size: ${FONT_RESPONSIVE_SIZE.navigation};
 `;
 
 export default Styled;

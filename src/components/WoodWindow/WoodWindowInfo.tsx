@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { TextSpan } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as SquareSVG } from '@/resources/Icons/square-solid.svg';
 import woodPlus from '@/resources/Images/woodPlus.webp';
 
@@ -86,10 +86,10 @@ const Styled = styled(Memoized)`
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 8rem;
+    padding: 5rem 2rem 0;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 3rem;
+        padding: 3rem 2rem 0;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
@@ -137,14 +137,12 @@ const Square = styled(SquareSVG)`
 const RowText = styled(TextSpan)`
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
-        font-size: ${FONT_SIZE.s};
     }
 `;
 const BoldRowText = styled(TextSpan)`
     font-weight: ${FONT_WEIGHT.bold};
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
-        font-size: ${FONT_SIZE.s};
     }
 `;
 export default Styled;

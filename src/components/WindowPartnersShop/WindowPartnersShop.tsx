@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { Header, Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_SIZE, SCREEN_WIDTH } from '@/Global/globalStyles';
 import effector from '@/resources/Icons/effector.svg';
 import eko from '@/resources/Icons/eko.svg';
 import fizia from '@/resources/Icons/fizia.svg';
@@ -95,9 +95,9 @@ const Memoized = memo(WindowPartnersShop);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 8rem;
+    padding: 5rem 2rem 0;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 3rem;
+        padding: 3rem 2rem 0;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;
@@ -106,10 +106,6 @@ const Styled = styled(Memoized)`
 
 const StyledText = styled(Text)`
     text-align: center;
-    @media (max-width: ${SCREEN_WIDTH.lTop}) {
-        font-size: ${FONT_SIZE.m};
-        line-height: ${LINE_HEIGHT.m};
-    }
 `;
 
 const Image = styled.img`
@@ -120,16 +116,14 @@ const StyledButton = styled(Button)`
     width: 250px;
 
     @media (max-width: ${SCREEN_WIDTH.m}) {
-        margin-top: 1.5rem;
+        margin-top: 0.5rem;
     }
 `;
 
 const ImagesWrapper = styled.div`
     display: flex;
     justify-content: space-around;
-    @media (max-width: 1360px) {
-        flex-direction: column;
-    }
+    flex-wrap: wrap;
 `;
 
 const ImageContainer = styled.div`
@@ -173,8 +167,7 @@ const StyledHeader = styled(Header)`
     padding: 2rem 0;
 
     @media (max-width: ${SCREEN_WIDTH.m}) {
-        font-size: ${FONT_SIZE.s};
-        padding: 1rem 0;
+        padding: 0.5rem 0;
     }
 `;
 export default Styled;

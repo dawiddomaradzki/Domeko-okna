@@ -57,10 +57,10 @@ const Styled = styled(Memoized)`
     margin: auto;
     display: flex;
     flex-direction: column;
-    padding-top: 8rem;
+    padding: 5rem 2rem 0;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 3rem;
+        padding: 3rem 2rem 0;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         padding-top: 2rem;

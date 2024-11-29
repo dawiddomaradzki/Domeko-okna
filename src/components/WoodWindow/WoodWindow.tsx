@@ -2,7 +2,7 @@ import { memo } from 'react';
 import styled from 'styled-components';
 
 import { MainHeader, Text } from '@/Global/components/commonComponents';
-import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
 import larch from '@/resources/Images/larch.png';
 import meranti from '@/resources/Images/meranti.png';
 import oak from '@/resources/Images/oak.png';
@@ -60,7 +60,7 @@ const WoodWindow = ({ className }: WoodWindowProps) => {
 const Memoized = memo(WoodWindow);
 const Styled = styled(Memoized)`
     max-width: 1800px;
-    margin: auto;
+    margin: 0 2rem;
     margin-top: 8rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         margin-top: 3rem;
@@ -101,12 +101,6 @@ const StyledHeader = styled(MainHeader)`
 const StyledText = styled(Text)`
     padding: 0 1rem;
     color: ${COLOR.ghostWhite};
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        line-height: ${LINE_HEIGHT.m};
-    }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.s};
-    }
 `;
 
 const StyledImg = styled.img`

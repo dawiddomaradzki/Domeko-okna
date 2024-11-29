@@ -30,7 +30,7 @@ const Memoized = memo(LogosShop);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 6rem;
+    padding-top: 5rem;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
     }
@@ -48,26 +48,15 @@ const IconsWrapper = styled.div`
         cursor: pointer;
     }
 
+    & .face {
+        height: clamp(100px, 30vw, 150px);
+        padding: 2rem 0;
+    }
+    & .alle {
+        height: clamp(60px, 20vw, 130px);
+    }
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         flex-direction: column;
-        & .face {
-            padding: 2rem 0;
-        }
-    }
-
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        & .alle {
-            height: 120px;
-        }
-    }
-
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        & .alle {
-            height: 90px;
-        }
-        & .face {
-            height: 140px;
-        }
     }
 `;
 export default Styled;

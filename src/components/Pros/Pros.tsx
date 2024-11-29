@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Header, Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as HammerSvg } from '@/resources/Icons/hammer.svg';
 import { ReactComponent as LeafSvg } from '@/resources/Icons/leaf.svg';
 import { ReactComponent as PanoramaSvg } from '@/resources/Icons/panorama.svg';
@@ -80,8 +80,8 @@ const Pros = ({ className }: ProsProps) => {
 const Memoized = memo(Pros);
 const Styled = styled(Memoized)`
     max-width: 1800px;
-    margin: auto;
-    padding-top: 8rem;
+    margin: 0 2rem;
+    padding-top: 5rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding-top: 3rem;
@@ -113,13 +113,16 @@ const InfoSection = styled.div`
         fill: ${COLOR.deepCarrotOrange};
         margin-bottom: 6rem;
     }
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding: 4rem 1rem;
-    }
-
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        padding: 4rem 2rem;
         & svg {
-            margin-bottom: 4rem;
+            height: 8rem;
+            margin-bottom: 2rem;
+        }
+    }
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        & svg {
+            height: 6rem;
         }
     }
 `;
@@ -131,7 +134,7 @@ const StyledImg = styled.img`
     border-radius: 1rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        height: 600px;
+        height: 500px;
     }
 `;
 
@@ -139,17 +142,10 @@ const StyledHeader = styled(Header)`
     color: ${COLOR.white};
     text-align: center;
     margin-bottom: 3rem;
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.m};
-    }
 `;
 
 const StyledText = styled(Text)`
     text-align: center;
     color: ${COLOR.white};
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        font-size: ${FONT_SIZE.m};
-        line-height: ${LINE_HEIGHT.m};
-    }
 `;
 export default Styled;

@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { SmallSpan, Text } from '@/Global/components/commonComponents';
+import { TextSpan } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_WEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import slidingWindow from '@/resources/Images/slidingWindow.png';
 import woodPlusHs from '@/resources/Images/woodPlusHs.webp';
 
@@ -62,9 +62,7 @@ const SlidingWindow = ({ className }: SlidingWindowProps) => {
                         </SubtextWrapper>
                     </div>
                 </Container>
-                <ImageContainer>
-                    <StyledImg src={slidingWindow} alt="slidingWindow" />
-                </ImageContainer>
+                <ImageContainer />
             </Wrapper>
         </div>
     );
@@ -73,19 +71,18 @@ const SlidingWindow = ({ className }: SlidingWindowProps) => {
 const Memoized = memo(SlidingWindow);
 const Styled = styled(Memoized)`
     max-width: 1800px;
-    margin: auto;
-    padding: 5rem 2rem 0;
+    margin: 5rem 2rem 0;
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding: 3rem 2rem 0;
+        margin: 3rem 2rem 0;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding-top: 2rem;
+        margin-top: 2rem;
     }
 `;
-const MainText = styled(SmallSpan)`
+const MainText = styled(TextSpan)`
     font-weight: ${FONT_WEIGHT.bold};
 `;
-const Subtext = styled(SmallSpan)``;
+const Subtext = styled(TextSpan)``;
 
 const SubtextWrapper = styled.div`
     display: flex;
@@ -97,17 +94,15 @@ const Line = styled.div`
     margin-right: 1rem;
     margin-left: 0.5rem;
     position: relative;
-    top: 14px;
+    top: 20px;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        top: 14px;
+    }
 `;
 
-const ColorText = styled(Text)`
+const ColorText = styled(TextSpan)`
     padding: 1rem;
     text-align: center;
-
-    @media (max-width: ${SCREEN_WIDTH.xs}) {
-        font-size: ${FONT_SIZE.xs};
-        line-height: ${LINE_HEIGHT.m};
-    }
 `;
 
 const Color = styled.div<{ color: string }>`
@@ -148,7 +143,7 @@ const ColorWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-    display: grid;
+    /* display: grid; */
     background-color: ${COLOR.midnightGreen};
     grid-template-columns: repeat(2, 1fr);
     color: ${COLOR.ghostWhite};
@@ -167,14 +162,8 @@ const Container = styled.div`
         padding: 2.5rem 3rem;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding: 2.5rem 0.5rem;
+        padding: 2.5rem 1.5rem;
     }
-`;
-
-const StyledImg = styled.img`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 `;
 
 const Image = styled.img`
@@ -183,7 +172,7 @@ const Image = styled.img`
         width: 450px;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        width: 350px;
+        width: 300px;
     }
 `;
 
@@ -194,9 +183,11 @@ const ImageWrapper = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        height: 500px;
-    }
+    min-height: 400px;
+    background-image: url(${slidingWindow});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 `;
 
 export default Styled;

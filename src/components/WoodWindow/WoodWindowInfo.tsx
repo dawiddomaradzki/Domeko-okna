@@ -132,6 +132,10 @@ const Square = styled(SquareSVG)`
     height: 1.5rem;
     margin-top: 0.7rem;
     fill: ${COLOR.deepCarrotOrange};
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        width: 1rem;
+        height: 1rem;
+    }
 `;
 
 const RowText = styled(TextSpan)`

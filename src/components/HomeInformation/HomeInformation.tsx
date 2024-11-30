@@ -38,6 +38,12 @@ const Styled = styled(Memoized)`
     margin: auto;
     max-width: 1800px;
     padding-top: 5rem;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        padding-top: 3rem;
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        padding-top: 2rem;
+    }
 `;
 
 const Container = styled.div`
@@ -47,6 +53,9 @@ const Container = styled.div`
         padding-top: 3rem;
         flex-direction: column;
         justify-content: center;
+    }
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        padding-top: 2rem;
     }
 `;
 

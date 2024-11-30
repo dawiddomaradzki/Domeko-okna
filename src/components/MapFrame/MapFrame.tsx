@@ -98,6 +98,7 @@ const StyledFrame = styled.iframe`
 
 const Container = styled.div`
     display: grid;
+    padding: 0 1.5rem;
     grid-template-columns: repeat(2, 1fr);
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         grid-template-rows: 1fr;

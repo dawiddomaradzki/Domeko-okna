@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Header, Text } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import budowlanka from '@/resources/Images/budowlanka.png';
 import door from '@/resources/Images/door.png';
 import slab from '@/resources/Images/slab.png';
@@ -126,13 +126,14 @@ const Row = styled.div`
 `;
 
 const StyledImg = styled.img`
-    height: 100%;
+    height: 600px;
     width: 100%;
+    /* height: clamp(18.75rem, 50vw, 46.875rem); */
     object-fit: cover;
     border-radius: 1rem 1rem 0 0;
 
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        height: 600px;
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        height: 300px;
     }
 `;
 

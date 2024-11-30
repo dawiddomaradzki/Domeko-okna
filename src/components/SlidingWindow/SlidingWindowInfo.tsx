@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { TextSpan } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_SIZE, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
+import { COLOR, FONT_WEIGHT, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as SquareSVG } from '@/resources/Icons/square-solid.svg';
 import woodAlu from '@/resources/Images/woodAlu.webp';
 
@@ -104,12 +104,15 @@ const Square = styled(SquareSVG)`
     height: 1.5rem;
     margin-top: 0.7rem;
     fill: ${COLOR.deepCarrotOrange};
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        width: 1rem;
+        height: 1rem;
+    }
 `;
 
 const RowText = styled(TextSpan)`
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
-        font-size: ${FONT_SIZE.s};
     }
 `;
 const BoldRowText = styled(TextSpan)`
@@ -117,7 +120,6 @@ const BoldRowText = styled(TextSpan)`
 
     @media (max-width: ${SCREEN_WIDTH.s}) {
         line-height: ${LINE_HEIGHT.m};
-        font-size: ${FONT_SIZE.s};
     }
 `;
 export default Styled;

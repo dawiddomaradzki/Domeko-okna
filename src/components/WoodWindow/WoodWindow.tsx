@@ -49,9 +49,7 @@ const WoodWindow = ({ className }: WoodWindowProps) => {
                         </ImageWoodWrapper>
                     </ImagesWrapper>
                 </Container>
-                <ImageContainer>
-                    <StyledImg src={woodWindow} alt="woodWindow" />
-                </ImageContainer>
+                <ImageContainer />
             </Wrapper>
         </div>
     );
@@ -71,7 +69,6 @@ const Styled = styled(Memoized)`
 `;
 
 const Wrapper = styled.div`
-    display: grid;
     background-color: ${COLOR.midnightGreen};
 
     grid-template-columns: repeat(2, 1fr);
@@ -103,16 +100,12 @@ const StyledText = styled(Text)`
     color: ${COLOR.ghostWhite};
 `;
 
-const StyledImg = styled.img`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-`;
-
 const ImageContainer = styled.div`
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        height: 500px;
-    }
+    min-height: 400px;
+    background-image: url(${woodWindow});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 `;
 
 const StyledWoodImg = styled.img`

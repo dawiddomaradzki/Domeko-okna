@@ -12,9 +12,12 @@ export const Text = styled.p`
 `;
 
 export const TextSpan = styled.span`
-    font-weight: ${FONT_WEIGHT.medium};
+    font-weight: ${FONT_WEIGHT.normal};
     font-size: ${FONT_RESPONSIVE_SIZE.paragraph};
     line-height: ${LINE_HEIGHT.l};
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        line-height: ${LINE_HEIGHT.m};
+    }
 `;
 
 export const SmallSpan = styled.span`

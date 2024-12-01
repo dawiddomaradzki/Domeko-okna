@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import DoorAndWindow from '../DoorAndWindow/DoorAndWindow';
 import Gallery from '../Gallery/Gallery';
 import Shop from '../Shop/Shop';
+import Tarasola from '../Tarasola/Tarasola';
 import NavAndFooter from './NavAndFooter/NavAndFooter';
 
 interface RoutingProps {
@@ -38,6 +39,14 @@ const Routing = ({ className }: RoutingProps) => {
                     element={
                         <NavAndFooter>
                             <Gallery />
+                        </NavAndFooter>
+                    }
+                />
+                <Route
+                    path="tarasola"
+                    element={
+                        <NavAndFooter>
+                            <Tarasola />
                         </NavAndFooter>
                     }
                 />

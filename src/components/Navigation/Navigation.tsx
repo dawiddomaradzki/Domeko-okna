@@ -25,11 +25,9 @@ const Navigation = ({ className }: NavigationProps) => {
                 </ImageWrapper>
                 <NavTextWrapper>
                     <StyledNavItem>
-                        <StyledText>
-                            <a target="blank" href="https://tarasola.pl/">
-                                Tarasola
-                            </a>
-                        </StyledText>
+                        <StyledNavLink to="/tarasola">
+                            <StyledText>Tarasola</StyledText>
+                        </StyledNavLink>
                     </StyledNavItem>
                     <StyledNavItem>
                         <StyledNavLink to="/gallery">

@@ -26,7 +26,7 @@ const Navigation = ({ className }: NavigationProps) => {
                 <NavTextWrapper>
                     <StyledNavItem>
                         <StyledNavLink to="/tarasola">
-                            <StyledText>Tarasola</StyledText>
+                            <StyledText>Tarasola - Wyceń</StyledText>
                         </StyledNavLink>
                     </StyledNavItem>
                     <StyledNavItem>

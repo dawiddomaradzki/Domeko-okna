@@ -1,17 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import GlobalStyle from './Global/GlobalStyling';
 import Routing from './pages/Routing/Routing';
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <GlobalStyle />
             <Routing />
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 

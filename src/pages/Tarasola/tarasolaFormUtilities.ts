@@ -53,10 +53,25 @@ const SelectValidation = Yup.object()
         value: Yup.string().required(),
         label: Yup.string().required(),
     })
-    .nullable()
+    .nonNullable()
     .required(WYMAGANE_POLE);
 
-export const initialValues = {
+export type TemplateParams = {
+    name: string;
+    number: string;
+    type: Option | null;
+    dimension: Option | null;
+    construction: Option | null;
+    sideConstruction: Option | null;
+    accessories: Option[] | null;
+};
+
+type Option = {
+    value: string;
+    label: string;
+};
+
+export const initialValues: TemplateParams = {
     name: '',
     number: '',
     type: null,

@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { COLOR } from '@/Global/globalStyles';
@@ -16,6 +16,22 @@ interface TarasolaProps {
 }
 
 const Tarasola = ({ className }: TarasolaProps) => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
         <div className={className} id="top">
             <TarasolaForm />
@@ -24,7 +40,7 @@ const Tarasola = ({ className }: TarasolaProps) => {
             <TarasolaSideConstruction />
             <TarasolaLight />
             <TarasolaAccessories />
-            <IconWrapper>
+            <IconWrapper $isVisible={isVisible}>
                 <a href="#top">
                     <ArrowUpLogoSVG />
                 </a>
@@ -39,7 +55,7 @@ const Styled = styled(Memoized)`
     padding-top: 10rem;
 `;
 
-const IconWrapper = styled.div`
+const IconWrapper = styled.div<{ $isVisible: boolean }>`
     position: fixed;
     width: 60px;
     height: 60px;
@@ -51,6 +67,8 @@ const IconWrapper = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    visibility: ${props => (props.$isVisible ? 'visible' : 'hidden')};
+    transition: all 0.2s ease-in-out;
     & svg {
         height: 25px;
         cursor: pointer;

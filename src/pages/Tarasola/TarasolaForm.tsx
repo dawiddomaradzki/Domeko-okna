@@ -1,11 +1,13 @@
+import axios from 'axios';
 import { ErrorMessage, Form, Formik } from 'formik';
-import React, { memo, useState } from 'react';
+import { memo } from 'react';
 import Button from 'react-bootstrap/Button';
-import Select, { ActionMeta, SingleValue } from 'react-select';
+import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import styled from 'styled-components';
 
-import { MainHeader } from '@/Global/components/commonComponents';
+// import { MainHeader } from '@/Global/components/commonComponents';
+import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_RESPONSIVE_SIZE } from '@/Global/globalStyles';
 import { ReactComponent as ArrowDownLogoSVG } from '@/resources/Icons/arrow-down.svg';
 import backgroundForm from '@/resources/Images/Tarasola/backgroundForm.webp';
@@ -17,6 +19,7 @@ import {
     dimensions,
     initialValues,
     sideConstructions,
+    TemplateParams,
     types,
     validationSchema,
 } from './tarasolaFormUtilities';
@@ -25,53 +28,97 @@ interface TarasolaFormProps {
     className?: string;
 }
 
-type Option = {
-    value: string;
-    label: string;
-};
-
 const animatedComponents = makeAnimated();
 
+const serviceId = 'service_jzyr924';
+const templateId = 'template_acxbkez';
+const publicKey = 'tskOpjuQziZcR_NCz';
+
 const TarasolaForm = ({ className }: TarasolaFormProps) => {
-    const [formData, setFormData] = useState(initialValues);
+    const handleSubmit = async (submitValues: TemplateParams) => {
+        const data = {
+            service_id: serviceId,
+            template_id: templateId,
+            user_id: publicKey,
+            template_params: {
+                name: submitValues.name,
+                number: submitValues.number,
+                type: submitValues.type?.value,
+                construction: submitValues.construction?.value,
+                sideConstruction: submitValues.sideConstruction?.value,
+                accessories: submitValues.accessories ? submitValues.accessories.map(el => el.value).join() : '',
+                dimension: submitValues.dimension?.value,
+            },
+        };
 
-    const handleSubmit = (submitValues: typeof initialValues) => {
-        console.log(submitValues);
+        // console.log(`%cdata`, `color: #E45EE4`, data);
+        try {
+            const response = await axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
+            console.log(`%cresponse.data`, `color: #ffa500`, response.data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
-    const handleSelectChange = (option: SingleValue<Option>, actionMeta: ActionMeta<Option>) => {
-        console.log(`%cevent`, `color: #ffa500`, option, actionMeta);
-        setFormData(prevState => ({
-            ...prevState,
-            [`${actionMeta.name}`]: option?.value,
-        }));
-    };
-    // const handleSelectChange = (fieldType: string, selectedOption: Option | null) => {
-    //     setFormData(prevState => ({
-    //         ...prevState,
-    //         [fieldType]: selectedOption?.value,
-    //     }));
-    // };
-
-    console.log(`%cformData`, `color: #E45EE4`, formData);
     return (
         <div className={className}>
+            <HeaderWithLine text="Zapytaj o wycenę" />
             <Wrapper>
                 <FormContainer>
-                    <HeaderContainer>
+                    {/* <HeaderContainer>
                         <MainHeader>Skontaktuj się z nami</MainHeader>
-                    </HeaderContainer>
+                    </HeaderContainer> */}
                     <Formik
                         initialValues={initialValues}
                         validationSchema={validationSchema}
-                        onSubmit={(values, actions) => {
-                            console.log({ values, actions });
-                        }}
+                        onSubmit={handleSubmit}
+                        // onSubmit={(values, actions) => {
+                        //     console.log({ values, actions });
+                        //     handleSubmit(values);
+                        // }}
                     >
-                        {({ setFieldValue, values }) => {
+                        {({ setFieldValue, values, isSubmitting, submitForm }) => {
                             console.log(`%cvalues`, `color: #2EFF2E`, values);
                             return (
                                 <Form>
+                                    <Box>
+                                        <SelectWrapper>
+                                            <HiddenIconWrapper />
+                                            <StyledInput
+                                                name="name"
+                                                placeholder="Imię"
+                                                value={values.name}
+                                                onChange={e => setFieldValue('name', e.target.value)}
+                                            />
+                                        </SelectWrapper>
+                                        <StyledErrorMessage name="name" component="div" />
+                                    </Box>
+                                    <Box>
+                                        <SelectWrapper>
+                                            <HiddenIconWrapper />
+                                            <StyledInput
+                                                name="number"
+                                                type="tel"
+                                                placeholder="Numer telefonu"
+                                                value={values.number}
+                                                onChange={e => setFieldValue('number', e.target.value)}
+                                            />
+                                        </SelectWrapper>
+                                        <StyledErrorMessage name="number" component="div" />
+                                    </Box>
+                                    <Box>
+                                        <SelectWrapper>
+                                            <HiddenIconWrapper />
+                                            <StyledSelect
+                                                name="dimension"
+                                                placeholder="Wybierz wymiar"
+                                                options={dimensions}
+                                                value={values.dimension}
+                                                onChange={option => setFieldValue('dimension', option)}
+                                            />
+                                        </SelectWrapper>
+                                        <StyledErrorMessage name="dimension" component="div" />
+                                    </Box>
                                     <Box>
                                         <SelectWrapper>
                                             <IconWrapper onClick={() => scrollToSectionWithOffset('type', 100)}>
@@ -87,21 +134,7 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                                         </SelectWrapper>
                                         <StyledErrorMessage name="type" component="div" />
                                     </Box>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <IconWrapper>
-                                                <ArrowDownLogoSVG />
-                                            </IconWrapper>
-                                            <StyledSelect
-                                                name="dimension"
-                                                placeholder="Wybierz wymiar"
-                                                options={dimensions}
-                                                value={values.dimension}
-                                                onChange={option => setFieldValue('dimension', option)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="dimension" component="div" />
-                                    </Box>
+
                                     <Box>
                                         <SelectWrapper>
                                             <IconWrapper onClick={() => scrollToSectionWithOffset('construction', 100)}>
@@ -151,26 +184,25 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                                         </SelectWrapper>
                                         <StyledErrorMessage name="accessories" component="div" />
                                     </Box>
+
                                     <ButtonContainer>
-                                        <Button type="submit" variant="primary">
+                                        <Button
+                                            onClick={submitForm}
+                                            type="submit"
+                                            variant="primary"
+                                            disabled={isSubmitting}
+                                        >
                                             Wyślij zapytanie
                                         </Button>
                                     </ButtonContainer>
                                 </Form>
                             );
                         }}
-                        {/* <Select
-                    value={selectedType}
-                    onChange={selectedOption => handleChange(selectedOption, setSelectedType)}
-                    options={rodzaj}
-                />
-                <Button variant="primary">Wyślij zapytanie</Button> */}
                     </Formik>
                 </FormContainer>
                 <div>
                     <Image src={backgroundForm} alt="tarasola logo" />
                 </div>
-                {/* <ImageContainer /> */}
             </Wrapper>
         </div>
     );
@@ -180,11 +212,11 @@ const Memoized = memo(TarasolaForm);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
 `;
 
 const HeaderContainer = styled.div`
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 `;
 
 const Box = styled.div`
@@ -218,6 +250,11 @@ const IconWrapper = styled.div`
         }
     }
 `;
+
+const HiddenIconWrapper = styled.div`
+    width: 39px;
+`;
+
 const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
@@ -239,5 +276,26 @@ const StyledErrorMessage = styled(ErrorMessage)`
     margin-left: 2rem;
     color: red;
     font-size: ${FONT_RESPONSIVE_SIZE.errorMessage};
+`;
+
+const StyledInput = styled.input`
+    width: 100%;
+    height: 38px;
+    font-size: 1.2rem;
+    padding: 2px 8px;
+    outline: none;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font: inherit;
+
+    &:focus {
+        border-color: #2684ff;
+        box-shadow: 0 0 0 1px #2684ff;
+    }
+
+    &:hover {
+        border-color: hsl(0, 0%, 70%);
+    }
 `;
 export default Styled;

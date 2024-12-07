@@ -50,4 +50,5 @@ export const FONT_RESPONSIVE_SIZE = {
     description: `calc(14px + (20 - 10) * ((100vw - 300px) / (1600 - 300)))`,
     footer: `calc(16px + (18 - 10) * ((100vw - 300px) / (1600 - 300)))`,
     errorMessage: `calc(8px + (16 - 10) * ((100vw - 300px) / (1600 - 300)))`,
+    tarasolaText: `calc(8px + (16 - 10) * ((100vw - 300px) / (1600 - 300)))`,
 };

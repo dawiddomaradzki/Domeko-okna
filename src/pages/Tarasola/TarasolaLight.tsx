@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Text } from '@/Global/components/commonComponents';
+import { TarasolaImage, TarasolaText } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
+import { SCREEN_WIDTH } from '@/Global/globalStyles';
 import LED from '@/resources/Images/Tarasola/t11.webp';
 import LEDRGB from '@/resources/Images/Tarasola/t12.jpg';
 import spot from '@/resources/Images/Tarasola/t13.jpg';
@@ -21,62 +22,62 @@ const TarasolaLight = ({ className }: TarasolaLightProps) => {
             <TypeWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-                        <Image src={LED} alt="tarasola logo" />
+                        <TarasolaImage src={LED} alt="tarasola logo" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Listwa LED</b> po obwodzie konstrukcji - biały
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Listwa LED</b> po obwodzie konstrukcji - RGB
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={LEDRGB} alt="tarasola logo" />
+                        <TarasolaImage src={LEDRGB} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
-                        <Image src={spot} alt="tarasola logo" />
+                        <TarasolaImage src={spot} alt="tarasola logo" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             Na dachu: <b>spot</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             Na dachu: <b>line</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={line} alt="tarasola logo" />
+                        <TarasolaImage src={line} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
-                        <Image src={strip} alt="tarasola logo" />
+                        <TarasolaImage src={strip} alt="tarasola logo" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             Na dachu: <b>strip</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             Na dachu: <b>box</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={box} alt="tarasola logo" />
+                        <TarasolaImage src={box} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
             </TypeWrapper>
@@ -87,6 +88,9 @@ const TarasolaLight = ({ className }: TarasolaLightProps) => {
 const Memoized = memo(TarasolaLight);
 const Styled = styled(Memoized)`
     padding-top: 5rem;
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        padding-top: 3rem;
+    }
 `;
 
 const TextWrapper = styled.div`
@@ -94,13 +98,7 @@ const TextWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `;
-const StyledText = styled(Text)`
-    text-align: center;
-`;
 
-const Image = styled.img`
-    max-height: 400px;
-`;
 const TypeWrapper = styled.div`
     max-width: 1700px;
     margin: auto;
@@ -111,6 +109,9 @@ const ImageWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
     margin-bottom: 2rem;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        grid-gap: 1.5rem;
+    }
 `;
 
 const ImageContainer = styled.div``;

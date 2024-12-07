@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Text } from '@/Global/components/commonComponents';
+import { TarasolaImage, TarasolaText } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
+import { SCREEN_WIDTH } from '@/Global/globalStyles';
 import glass from '@/resources/Images/Tarasola/t7.webp';
 import shutters from '@/resources/Images/Tarasola/t8.webp';
 import rollerBlinds from '@/resources/Images/Tarasola/t9.webp';
@@ -19,42 +20,42 @@ const TarasolaSideConstruction = ({ className }: TarasolaSideConstructionProps) 
             <TypeWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-                        <Image src={glass} alt="tarasola logo" />
+                        <TarasolaImage src={glass} alt="tarasola logo" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Przeszklenia</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Shutters</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={shutters} alt="tarasola logo" />
+                        <TarasolaImage src={shutters} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
-                        <Image src={rollerBlinds} alt="tarasola logo" />
+                        <TarasolaImage src={rollerBlinds} alt="tarasola logo" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Rolety ZIP</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Panel Stały</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={fixedPanel} alt="tarasola logo" />
+                        <TarasolaImage src={fixedPanel} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
             </TypeWrapper>
@@ -65,6 +66,10 @@ const TarasolaSideConstruction = ({ className }: TarasolaSideConstructionProps) 
 const Memoized = memo(TarasolaSideConstruction);
 const Styled = styled(Memoized)`
     padding-top: 5rem;
+
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        padding-top: 3rem;
+    }
 `;
 
 const TextWrapper = styled.div`
@@ -72,13 +77,7 @@ const TextWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `;
-const StyledText = styled(Text)`
-    text-align: center;
-`;
 
-const Image = styled.img`
-    max-height: 400px;
-`;
 const TypeWrapper = styled.div`
     max-width: 1700px;
     margin: auto;
@@ -89,6 +88,10 @@ const ImageWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
     margin-bottom: 2rem;
+
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        grid-gap: 1.5rem;
+    }
 `;
 
 const ImageContainer = styled.div``;

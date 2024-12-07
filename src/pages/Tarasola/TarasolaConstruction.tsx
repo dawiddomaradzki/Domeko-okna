@@ -1,10 +1,11 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Text } from '@/Global/components/commonComponents';
+import { TarasolaImage, TarasolaText } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import freeStand from '@/resources/Images/Tarasola/t5.webp';
-import sideStand from '@/resources/Images/Tarasola/t6.webp';
+import { SCREEN_WIDTH } from '@/Global/globalStyles';
+import freeStand from '@/resources/Images/Tarasola/t5.jpg';
+import sideStand from '@/resources/Images/Tarasola/t6.jpg';
 
 interface TarasolaConstructionProps {
     className?: string;
@@ -17,22 +18,22 @@ const TarasolaConstruction = ({ className }: TarasolaConstructionProps) => {
             <TypeWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-                        <Image src={freeStand} alt="freeStand" />
+                        <TarasolaImage src={freeStand} alt="freeStand" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Wolnostojący</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Przyścienny</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={sideStand} alt="sideStand" />
+                        <TarasolaImage src={sideStand} alt="sideStand" />
                     </ImageContainer>
                 </ImageWrapper>
             </TypeWrapper>
@@ -43,6 +44,9 @@ const TarasolaConstruction = ({ className }: TarasolaConstructionProps) => {
 const Memoized = memo(TarasolaConstruction);
 const Styled = styled(Memoized)`
     padding-top: 5rem;
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        padding-top: 3rem;
+    }
 `;
 
 const TextWrapper = styled.div`
@@ -50,13 +54,7 @@ const TextWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `;
-const StyledText = styled(Text)`
-    text-align: center;
-`;
 
-const Image = styled.img`
-    max-height: 400px;
-`;
 const TypeWrapper = styled.div`
     max-width: 1700px;
     margin: auto;
@@ -67,6 +65,10 @@ const ImageWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
     margin-bottom: 2rem;
+
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        grid-gap: 1.5rem;
+    }
 `;
 
 const ImageContainer = styled.div``;

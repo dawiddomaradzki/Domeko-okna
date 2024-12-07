@@ -1,8 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 
-import { Text } from '@/Global/components/commonComponents';
+import { TarasolaImage, TarasolaText } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
+import { SCREEN_WIDTH } from '@/Global/globalStyles';
 import heatEmitter from '@/resources/Images/Tarasola/t17.png';
 import audio from '@/resources/Images/Tarasola/t18.png';
 import weatherSensor from '@/resources/Images/Tarasola/t19.png';
@@ -19,42 +20,42 @@ const TarasolaAccessories = ({ className }: TarasolaAccessoriesProps) => {
             <TypeWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-                        <Image src={heatEmitter} alt="heatEmitter" />
+                        <TarasolaImage src={heatEmitter} alt="heatEmitter" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Promienniki ciepła</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Zestaw audio</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={audio} alt="audio" />
+                        <TarasolaImage src={audio} alt="audio" />
                     </ImageContainer>
                 </ImageWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
-                        <Image src={weatherSensor} alt="weatherSensor" />
+                        <TarasolaImage src={weatherSensor} alt="weatherSensor" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Czujniki pogodowe</b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
-                        <StyledText>
+                        <TarasolaText>
                             <b>Sterowanie smart </b>
-                        </StyledText>
+                        </TarasolaText>
                     </TextWrapper>
                     <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <Image src={smart} alt="smart" />
+                        <TarasolaImage src={smart} alt="smart" />
                     </ImageContainer>
                 </ImageWrapper>
             </TypeWrapper>
@@ -72,13 +73,7 @@ const TextWrapper = styled.div`
     justify-content: center;
     align-items: center;
 `;
-const StyledText = styled(Text)`
-    text-align: center;
-`;
 
-const Image = styled.img`
-    max-height: 400px;
-`;
 const TypeWrapper = styled.div`
     max-width: 1700px;
     margin: auto;
@@ -89,6 +84,9 @@ const ImageWrapper = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
     margin-bottom: 2rem;
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        grid-gap: 1.5rem;
+    }
 `;
 
 const ImageContainer = styled.div``;

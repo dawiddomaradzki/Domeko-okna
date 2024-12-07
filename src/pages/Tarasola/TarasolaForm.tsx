@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 // import { MainHeader } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
-import { COLOR, FONT_RESPONSIVE_SIZE } from '@/Global/globalStyles';
+import { COLOR, FONT_RESPONSIVE_SIZE, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as ArrowDownLogoSVG } from '@/resources/Icons/arrow-down.svg';
 import backgroundForm from '@/resources/Images/Tarasola/backgroundForm.webp';
 import { scrollToSectionWithOffset } from '@/utils/scrollTo';
@@ -65,9 +65,6 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
             <HeaderWithLine text="Zapytaj o wycenę" />
             <Wrapper>
                 <FormContainer>
-                    {/* <HeaderContainer>
-                        <MainHeader>Skontaktuj się z nami</MainHeader>
-                    </HeaderContainer> */}
                     <Formik
                         initialValues={initialValues}
                         validationSchema={validationSchema}
@@ -211,12 +208,6 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
 const Memoized = memo(TarasolaForm);
 const Styled = styled(Memoized)`
     max-width: 1800px;
-    margin: auto;
-    /* padding-top: 5rem; */
-`;
-
-const HeaderContainer = styled.div`
-    margin-bottom: 1rem;
 `;
 
 const Box = styled.div`
@@ -232,8 +223,13 @@ const SelectWrapper = styled.div`
 `;
 
 const Image = styled.img`
-    width: 50vw;
-    max-height: 500px;
+    height: 100%;
+    object-fit: cover;
+    max-width: 50vw;
+    width: clamp(18.75rem, 50vw, 46.875rem);
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        display: none;
+    }
 `;
 const IconWrapper = styled.div`
     padding-right: 1rem;
@@ -258,6 +254,10 @@ const HiddenIconWrapper = styled.div`
 const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 const ButtonContainer = styled.div`
@@ -267,9 +267,15 @@ const ButtonContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-    max-width: 800px;
+    max-width: 900px;
     min-width: 450px;
     padding: 0 2rem;
+
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        justify-content: center;
+        min-width: 350px;
+        padding: 0;
+    }
 `;
 const StyledErrorMessage = styled(ErrorMessage)`
     padding: 0.3rem 0 0 0.3rem;

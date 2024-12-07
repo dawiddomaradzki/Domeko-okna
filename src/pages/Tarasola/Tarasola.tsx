@@ -1,8 +1,9 @@
 import { memo, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { COLOR } from '@/Global/globalStyles';
+import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as ArrowUpLogoSVG } from '@/resources/Icons/arrow-up-long.svg';
+import { scrollToSectionWithOffset } from '@/utils/scrollTo';
 
 import TarasolaAccessories from './TarasolaAccessories';
 import TarasolaConstruction from './TarasolaConstruction';
@@ -40,10 +41,8 @@ const Tarasola = ({ className }: TarasolaProps) => {
             <TarasolaSideConstruction />
             <TarasolaLight />
             <TarasolaAccessories />
-            <IconWrapper $isVisible={isVisible}>
-                <a href="#top">
-                    <ArrowUpLogoSVG />
-                </a>
+            <IconWrapper $isVisible={isVisible} onClick={() => scrollToSectionWithOffset('top', 0)}>
+                <ArrowUpLogoSVG />
             </IconWrapper>
         </div>
     );
@@ -53,6 +52,11 @@ const Memoized = memo(Tarasola);
 const Styled = styled(Memoized)`
     margin: 0 3rem;
     padding-top: 10rem;
+
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        padding-top: 8rem;
+        margin: 0 1rem;
+    }
 `;
 
 const IconWrapper = styled.div<{ $isVisible: boolean }>`
@@ -62,7 +66,7 @@ const IconWrapper = styled.div<{ $isVisible: boolean }>`
     background-color: ${COLOR.grey};
     opacity: 85%;
     bottom: 20px;
-    left: 50vw;
+    left: 44vw;
     display: flex;
     justify-content: center;
     align-items: center;

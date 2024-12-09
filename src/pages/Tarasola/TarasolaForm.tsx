@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { ErrorMessage, Form, Formik } from 'formik';
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import styled from 'styled-components';
 
-// import { MainHeader } from '@/Global/components/commonComponents';
+import { TarasolaText } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { COLOR, FONT_RESPONSIVE_SIZE, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as ArrowDownLogoSVG } from '@/resources/Icons/arrow-down.svg';
@@ -34,7 +34,35 @@ const serviceId = 'service_jzyr924';
 const templateId = 'template_acxbkez';
 const publicKey = 'tskOpjuQziZcR_NCz';
 
+const customStyles = {
+    control: (provided, state) => ({
+        ...provided,
+        borderColor: state.isFocused ? '#f59871' : provided.borderColor,
+        boxShadow: state.isFocused ? '0 0 0 1px #f59871' : provided.boxShadow,
+        '&:hover': {
+            borderColor: '#f59871',
+        },
+    }),
+    multiValue: provided => ({
+        ...provided,
+        backgroundColor: '#f59871',
+    }),
+    multiValueLabel: provided => ({
+        ...provided,
+        color: 'white',
+    }),
+    multiValueRemove: provided => ({
+        ...provided,
+        color: 'white',
+        '&:hover': {
+            backgroundColor: '#e06951',
+            color: 'white',
+        },
+    }),
+};
+
 const TarasolaForm = ({ className }: TarasolaFormProps) => {
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const handleSubmit = async (submitValues: TemplateParams) => {
         const data = {
             service_id: serviceId,
@@ -51,10 +79,11 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
             },
         };
 
-        // console.log(`%cdata`, `color: #E45EE4`, data);
         try {
             const response = await axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
-            console.log(`%cresponse.data`, `color: #ffa500`, response.data);
+            if (response.status === 200) {
+                setIsFormSubmitted(true);
+            }
         } catch (error) {
             console.log(error);
         }
@@ -65,137 +94,150 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
             <HeaderWithLine text="Zapytaj o wycenę" />
             <Wrapper>
                 <FormContainer>
-                    <Formik
-                        initialValues={initialValues}
-                        validationSchema={validationSchema}
-                        onSubmit={handleSubmit}
-                        // onSubmit={(values, actions) => {
-                        //     console.log({ values, actions });
-                        //     handleSubmit(values);
-                        // }}
-                    >
-                        {({ setFieldValue, values, isSubmitting, submitForm }) => {
-                            console.log(`%cvalues`, `color: #2EFF2E`, values);
-                            return (
-                                <Form>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <HiddenIconWrapper />
-                                            <StyledInput
-                                                name="name"
-                                                placeholder="Imię"
-                                                value={values.name}
-                                                onChange={e => setFieldValue('name', e.target.value)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="name" component="div" />
-                                    </Box>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <HiddenIconWrapper />
-                                            <StyledInput
-                                                name="number"
-                                                type="tel"
-                                                placeholder="Numer telefonu"
-                                                value={values.number}
-                                                onChange={e => setFieldValue('number', e.target.value)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="number" component="div" />
-                                    </Box>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <HiddenIconWrapper />
-                                            <StyledSelect
-                                                name="dimension"
-                                                placeholder="Wybierz wymiar"
-                                                options={dimensions}
-                                                value={values.dimension}
-                                                onChange={option => setFieldValue('dimension', option)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="dimension" component="div" />
-                                    </Box>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <IconWrapper onClick={() => scrollToSectionWithOffset('type', 100)}>
-                                                <ArrowDownLogoSVG />
-                                            </IconWrapper>
-                                            <StyledSelect
-                                                name="type"
-                                                placeholder="Wybierz konstrukcję"
-                                                options={types}
-                                                value={values.type}
-                                                onChange={option => setFieldValue('type', option)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="type" component="div" />
-                                    </Box>
+                    {isFormSubmitted ? (
+                        <TextWrapper>
+                            <TarasolaText>
+                                Dzękujęmy za wysłanie formularza. Nasz pracownik skontaktuje się odnośnie wyceny
+                                najszybciej jak to możliwe 😊
+                            </TarasolaText>
+                        </TextWrapper>
+                    ) : (
+                        <Formik
+                            initialValues={initialValues}
+                            validationSchema={validationSchema}
+                            onSubmit={handleSubmit}
+                        >
+                            {({ setFieldValue, values, isSubmitting, submitForm, isValid }) => {
+                                return (
+                                    <Form>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <HiddenIconWrapper />
+                                                <StyledInput
+                                                    name="name"
+                                                    placeholder="Imię"
+                                                    value={values.name}
+                                                    onChange={e => setFieldValue('name', e.target.value)}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="name" component="div" />
+                                        </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <HiddenIconWrapper />
+                                                <StyledInput
+                                                    name="number"
+                                                    type="tel"
+                                                    placeholder="Numer telefonu"
+                                                    value={values.number}
+                                                    onChange={e => setFieldValue('number', e.target.value)}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="number" component="div" />
+                                        </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <HiddenIconWrapper />
+                                                <StyledSelect
+                                                    name="dimension"
+                                                    placeholder="Wybierz wymiar"
+                                                    options={dimensions}
+                                                    value={values.dimension}
+                                                    onChange={option => setFieldValue('dimension', option)}
+                                                    styles={customStyles}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="dimension" component="div" />
+                                        </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <IconWrapper onClick={() => scrollToSectionWithOffset('type', 100)}>
+                                                    <ArrowDownLogoSVG />
+                                                </IconWrapper>
+                                                <StyledSelect
+                                                    name="type"
+                                                    placeholder="Wybierz konstrukcję"
+                                                    options={types}
+                                                    value={values.type}
+                                                    onChange={option => setFieldValue('type', option)}
+                                                    styles={customStyles}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="type" component="div" />
+                                        </Box>
 
-                                    <Box>
-                                        <SelectWrapper>
-                                            <IconWrapper onClick={() => scrollToSectionWithOffset('construction', 100)}>
-                                                <ArrowDownLogoSVG />
-                                            </IconWrapper>
-                                            <StyledSelect
-                                                name="construction"
-                                                placeholder="Wybierz typ konstrukcji"
-                                                options={constructions}
-                                                value={values.construction}
-                                                onChange={option => setFieldValue('construction', option)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="construction" component="div" />
-                                    </Box>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <IconWrapper
-                                                onClick={() => scrollToSectionWithOffset('sideConstruction', 100)}
+                                        <Box>
+                                            <SelectWrapper>
+                                                <IconWrapper
+                                                    onClick={() => scrollToSectionWithOffset('construction', 100)}
+                                                >
+                                                    <ArrowDownLogoSVG />
+                                                </IconWrapper>
+                                                <StyledSelect
+                                                    name="construction"
+                                                    placeholder="Wybierz typ konstrukcji"
+                                                    options={constructions}
+                                                    value={values.construction}
+                                                    onChange={option => setFieldValue('construction', option)}
+                                                    styles={customStyles}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="construction" component="div" />
+                                        </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <IconWrapper
+                                                    onClick={() => scrollToSectionWithOffset('sideConstruction', 100)}
+                                                >
+                                                    <ArrowDownLogoSVG />
+                                                </IconWrapper>
+                                                <StyledSelect
+                                                    name="sideConstruction"
+                                                    placeholder="Wybierz konstrukcję boczną"
+                                                    options={sideConstructions}
+                                                    value={values.sideConstruction}
+                                                    onChange={option => setFieldValue('sideConstruction', option)}
+                                                    styles={customStyles}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="sideConstruction" component="div" />
+                                        </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <IconWrapper
+                                                    onClick={() => scrollToSectionWithOffset('accessories', 100)}
+                                                >
+                                                    <ArrowDownLogoSVG />
+                                                </IconWrapper>
+                                                <StyledSelect
+                                                    name="accessories"
+                                                    placeholder="Wybierz akcesoria"
+                                                    components={animatedComponents}
+                                                    options={accessories}
+                                                    value={values.accessories}
+                                                    onChange={option => setFieldValue('accessories', option)}
+                                                    isMulti
+                                                    styles={customStyles}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="accessories" component="div" />
+                                        </Box>
+
+                                        <ButtonContainer>
+                                            <StyledButton
+                                                onClick={submitForm}
+                                                type="submit"
+                                                variant="secondary"
+                                                disabled={isSubmitting || !isValid}
                                             >
-                                                <ArrowDownLogoSVG />
-                                            </IconWrapper>
-                                            <StyledSelect
-                                                name="sideConstruction"
-                                                placeholder="Wybierz konstrukcję boczną"
-                                                options={sideConstructions}
-                                                value={values.sideConstruction}
-                                                onChange={option => setFieldValue('sideConstruction', option)}
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="sideConstruction" component="div" />
-                                    </Box>
-                                    <Box>
-                                        <SelectWrapper>
-                                            <IconWrapper onClick={() => scrollToSectionWithOffset('accessories', 100)}>
-                                                <ArrowDownLogoSVG />
-                                            </IconWrapper>
-                                            <StyledSelect
-                                                name="accessories"
-                                                placeholder="Wybierz akcesoria"
-                                                components={animatedComponents}
-                                                options={accessories}
-                                                value={values.accessories}
-                                                onChange={option => setFieldValue('accessories', option)}
-                                                isMulti
-                                            />
-                                        </SelectWrapper>
-                                        <StyledErrorMessage name="accessories" component="div" />
-                                    </Box>
-
-                                    <ButtonContainer>
-                                        <Button
-                                            onClick={submitForm}
-                                            type="submit"
-                                            variant="primary"
-                                            disabled={isSubmitting}
-                                        >
-                                            Wyślij zapytanie
-                                        </Button>
-                                    </ButtonContainer>
-                                </Form>
-                            );
-                        }}
-                    </Formik>
+                                                Wyślij zapytanie
+                                            </StyledButton>
+                                        </ButtonContainer>
+                                    </Form>
+                                );
+                            }}
+                        </Formik>
+                    )}
                 </FormContainer>
                 <div>
                     <Image src={backgroundForm} alt="tarasola logo" />
@@ -210,12 +252,34 @@ const Styled = styled(Memoized)`
     max-width: 1800px;
 `;
 
+const TextWrapper = styled.div`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        padding: 0 1rem;
+    }
+`;
+
 const Box = styled.div`
     padding-bottom: 1rem;
 `;
 
 const StyledSelect = styled(Select)`
     width: 100%;
+`;
+
+const StyledButton = styled(Button)`
+    width: 250px;
+
+    &:hover {
+        background-color: ${COLOR.deepCarrotOrange};
+        border-color: ${COLOR.deepCarrotOrange};
+    }
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        width: 150px;
+    }
 `;
 const SelectWrapper = styled.div`
     display: flex;
@@ -264,6 +328,9 @@ const ButtonContainer = styled.div`
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        margin-top: 1rem;
+    }
 `;
 
 const FormContainer = styled.div`
@@ -296,12 +363,12 @@ const StyledInput = styled.input`
     font: inherit;
 
     &:focus {
-        border-color: #2684ff;
-        box-shadow: 0 0 0 1px #2684ff;
+        border-color: #f59871;
+        box-shadow: 0 0 0 1px #f59871;
     }
 
     &:hover {
-        border-color: hsl(0, 0%, 70%);
+        border-color: #f59871;
     }
 `;
 export default Styled;

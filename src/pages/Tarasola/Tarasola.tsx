@@ -50,12 +50,10 @@ const Tarasola = ({ className }: TarasolaProps) => {
 
 const Memoized = memo(Tarasola);
 const Styled = styled(Memoized)`
-    margin: 0 3rem;
-    padding-top: 10rem;
+    padding: 10rem 3rem 0 3rem;
 
     @media (max-width: ${SCREEN_WIDTH.s}) {
-        padding-top: 8rem;
-        margin: 0 1rem;
+        padding: 8rem 1rem 0 1rem;
     }
 `;
 

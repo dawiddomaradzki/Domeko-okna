@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Text } from '@/Global/components/commonComponents';
 import { COLOR, FONT_SIZE, LINE_HEIGHT, SCREEN_WIDTH } from '@/Global/globalStyles';
-import front from '@/resources/Images/front.png';
+import front from '@/resources/Images/front.webp';
 
 interface WelcomeShopProps {
     className?: string;

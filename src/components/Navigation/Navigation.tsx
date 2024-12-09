@@ -62,7 +62,7 @@ const Styled = styled(Memoized)`
 
     @media (max-width: ${SCREEN_WIDTH.xs}) {
         height: 4rem;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
     }
 `;
 

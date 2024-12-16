@@ -163,7 +163,7 @@ const Container = styled.div`
         padding: 2.5rem 3rem;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding: 2.5rem 1.5rem;
+        padding: 2.5rem 1rem;
     }
 `;
 
@@ -173,7 +173,7 @@ const Image = styled.img`
         width: 450px;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        width: 300px;
+        width: 250px;
     }
 `;
 

@@ -86,6 +86,9 @@ const Container = styled.div`
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
         padding: 2.5rem 3rem;
     }
+    @media (max-width: ${SCREEN_WIDTH.s}) {
+        padding: 2.5rem 2rem;
+    }
 `;
 
 const HeaderWrapper = styled.div`

@@ -108,7 +108,7 @@ const StyledImg = styled.img`
         width: 600px;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        width: 350px;
+        width: 300px;
     }
 `;
 

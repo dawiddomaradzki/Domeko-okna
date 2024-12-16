@@ -69,6 +69,7 @@ const Styled = styled(Memoized)`
 `;
 
 const Wrapper = styled.div`
+    display: grid;
     background-color: ${COLOR.midnightGreen};
 
     grid-template-columns: repeat(2, 1fr);

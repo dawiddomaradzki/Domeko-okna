@@ -53,8 +53,19 @@ const SelectValidation = Yup.object()
         value: Yup.string().required(),
         label: Yup.string().required(),
     })
-    .nonNullable()
+    .nonNullable(WYMAGANE_POLE)
     .required(WYMAGANE_POLE);
+
+const MultiSelectValidation = Yup.array()
+    .of(
+        Yup.object().shape({
+            value: Yup.string().required(),
+            label: Yup.string().required(),
+        })
+    )
+    .required(WYMAGANE_POLE)
+    .min(1, WYMAGANE_POLE)
+    .nonNullable(WYMAGANE_POLE);
 
 export type TemplateParams = {
     name: string;
@@ -62,7 +73,7 @@ export type TemplateParams = {
     type: Option | null;
     dimension: Option | null;
     construction: Option | null;
-    sideConstruction: Option | null;
+    sideConstruction: Option[] | null;
     accessories: Option[] | null;
 };
 
@@ -86,5 +97,5 @@ export const validationSchema = Yup.object({
     type: SelectValidation,
     dimension: SelectValidation,
     construction: SelectValidation,
-    sideConstruction: SelectValidation,
+    sideConstruction: MultiSelectValidation,
 });

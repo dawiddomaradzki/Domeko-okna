@@ -79,6 +79,17 @@ const Styled = styled(Memoized)`
         margin-top: 2rem;
     }
 `;
+const Wrapper = styled.div`
+    display: grid;
+    background-color: ${COLOR.midnightGreen};
+    grid-template-columns: repeat(2, 1fr);
+    color: ${COLOR.ghostWhite};
+
+    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+    }
+`;
 const MainText = styled(TextSpan)`
     font-weight: ${FONT_WEIGHT.bold};
 `;
@@ -142,17 +153,6 @@ const ColorWrapper = styled.div`
     }
 `;
 
-const Wrapper = styled.div`
-    /* display: grid; */
-    background-color: ${COLOR.midnightGreen};
-    grid-template-columns: repeat(2, 1fr);
-    color: ${COLOR.ghostWhite};
-
-    @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr;
-    }
-`;
 const Container = styled.div`
     padding: 5rem 6rem;
     display: flex;

@@ -12,7 +12,7 @@ const Banner = ({ className }: BannerProps) => {
     return (
         <div className={className}>
             <SectionWrapper>
-                <StyledText>Zostaliśmy dealerem firmy</StyledText>
+                <StyledText>Jesteśmy partnerem premium firmy</StyledText>
                 <ImageContainer>
                     <Image src={tarasolaWordLogo} alt="tarasola logo" />
                 </ImageContainer>

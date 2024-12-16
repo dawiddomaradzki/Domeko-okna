@@ -73,7 +73,9 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                 number: submitValues.number,
                 type: submitValues.type?.value,
                 construction: submitValues.construction?.value,
-                sideConstruction: submitValues.sideConstruction?.value,
+                sideConstruction: submitValues.sideConstruction
+                    ? submitValues.sideConstruction.map(el => el.value).join()
+                    : '',
                 accessories: submitValues.accessories ? submitValues.accessories.map(el => el.value).join() : '',
                 dimension: submitValues.dimension?.value,
             },
@@ -195,8 +197,10 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                                                     name="sideConstruction"
                                                     placeholder="Wybierz konstrukcję boczną"
                                                     options={sideConstructions}
+                                                    components={animatedComponents}
                                                     value={values.sideConstruction}
                                                     onChange={option => setFieldValue('sideConstruction', option)}
+                                                    isMulti
                                                     styles={customStyles}
                                                 />
                                             </SelectWrapper>
@@ -272,6 +276,10 @@ const StyledSelect = styled(Select)`
 
 const StyledButton = styled(Button)`
     width: 250px;
+
+    &:disabled {
+        cursor: 'not-allowed';
+    }
 
     &:hover {
         background-color: ${COLOR.deepCarrotOrange};

@@ -75,7 +75,7 @@ const TextWrapper = styled.div`
 `;
 
 const TypeWrapper = styled.div`
-    max-width: 1700px;
+    max-width: 1500px;
     margin: auto;
 `;
 

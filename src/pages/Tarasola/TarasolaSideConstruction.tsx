@@ -7,7 +7,9 @@ import { SCREEN_WIDTH } from '@/Global/globalStyles';
 import glass from '@/resources/Images/Tarasola/t7.webp';
 import shutters from '@/resources/Images/Tarasola/t8.webp';
 import rollerBlinds from '@/resources/Images/Tarasola/t9.webp';
-import fixedPanel from '@/resources/Images/Tarasola/t10.webp';
+import fixedPanel from '@/resources/Images/Tarasola/t10.png';
+
+import { ImageContainer } from './common';
 
 interface TarasolaSideConstructionProps {
     className?: string;
@@ -34,13 +36,13 @@ const TarasolaSideConstruction = ({ className }: TarasolaSideConstructionProps) 
                             <b>Shutters</b>
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
                         <TarasolaImage src={shutters} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
-                        <TarasolaImage src={rollerBlinds} alt="tarasola logo" />
+                        <TarasolaImage src={rollerBlinds} alt="roller blinds" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
                         <TarasolaText>
@@ -54,8 +56,8 @@ const TarasolaSideConstruction = ({ className }: TarasolaSideConstructionProps) 
                             <b>Panel Stały</b>
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <TarasolaImage src={fixedPanel} alt="tarasola logo" />
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
+                        <TarasolaImage src={fixedPanel} alt="fixed panel" />
                     </ImageContainer>
                 </ImageWrapper>
             </TypeWrapper>
@@ -79,7 +81,7 @@ const TextWrapper = styled.div`
 `;
 
 const TypeWrapper = styled.div`
-    max-width: 1700px;
+    max-width: 1500px;
     margin: auto;
 `;
 
@@ -94,5 +96,4 @@ const ImageWrapper = styled.div`
     }
 `;
 
-const ImageContainer = styled.div``;
 export default Styled;

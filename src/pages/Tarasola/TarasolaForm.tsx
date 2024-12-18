@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { ErrorMessage, Form, Formik } from 'formik';
 import { memo, useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import styled from 'styled-components';
@@ -71,6 +70,7 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
             template_params: {
                 name: submitValues.name,
                 number: submitValues.number,
+                email: submitValues.email,
                 type: submitValues.type?.value,
                 construction: submitValues.construction?.value,
                 sideConstruction: submitValues.sideConstruction
@@ -78,6 +78,7 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                     : '',
                 accessories: submitValues.accessories ? submitValues.accessories.map(el => el.value).join() : '',
                 dimension: submitValues.dimension?.value,
+                comments: submitValues.comments,
             },
         };
 
@@ -110,6 +111,7 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                             onSubmit={handleSubmit}
                         >
                             {({ setFieldValue, values, isSubmitting, submitForm, isValid }) => {
+                                console.log(`%cvalues.email`, `color: #2EFF2E`, values.email);
                                 return (
                                     <Form>
                                         <Box>
@@ -136,6 +138,19 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                                                 />
                                             </SelectWrapper>
                                             <StyledErrorMessage name="number" component="div" />
+                                        </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <HiddenIconWrapper />
+                                                <StyledInput
+                                                    name="email"
+                                                    type="email"
+                                                    placeholder="Email"
+                                                    value={values.email}
+                                                    onChange={e => setFieldValue('email', e.target.value)}
+                                                />
+                                            </SelectWrapper>
+                                            <StyledErrorMessage name="email" component="div" />
                                         </Box>
                                         <Box>
                                             <SelectWrapper>
@@ -226,16 +241,22 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                                             </SelectWrapper>
                                             <StyledErrorMessage name="accessories" component="div" />
                                         </Box>
+                                        <Box>
+                                            <SelectWrapper>
+                                                <HiddenIconWrapper />
+                                                <StyledTextArea
+                                                    name="comments"
+                                                    placeholder="Uwagi"
+                                                    value={values.comments}
+                                                    onChange={e => setFieldValue('comments', e.target.value)}
+                                                />
+                                            </SelectWrapper>
+                                        </Box>
 
-                                        <ButtonContainer>
-                                            <StyledButton
-                                                onClick={submitForm}
-                                                type="submit"
-                                                variant="secondary"
-                                                disabled={isSubmitting || !isValid}
-                                            >
+                                        <ButtonContainer $disabled={isSubmitting || !isValid}>
+                                            <SubmitButton onClick={submitForm} type="submit" disabled={isSubmitting}>
                                                 Wyślij zapytanie
-                                            </StyledButton>
+                                            </SubmitButton>
                                         </ButtonContainer>
                                     </Form>
                                 );
@@ -253,7 +274,9 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
 
 const Memoized = memo(TarasolaForm);
 const Styled = styled(Memoized)`
-    max-width: 1800px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 `;
 
 const TextWrapper = styled.div`
@@ -274,21 +297,20 @@ const StyledSelect = styled(Select)`
     width: 100%;
 `;
 
-const StyledButton = styled(Button)`
+const SubmitButton = styled.button`
     width: 250px;
-
-    &:disabled {
-        cursor: 'not-allowed';
-    }
-
+    border-radius: 6px;
+    border: none;
+    background-color: ${COLOR.deepCarrotOrange};
+    padding: 10px;
+    color: ${COLOR.ghostWhite};
     &:hover {
         background-color: ${COLOR.deepCarrotOrange};
+        opacity: 90%;
         border-color: ${COLOR.deepCarrotOrange};
     }
-    @media (max-width: ${SCREEN_WIDTH.s}) {
-        width: 150px;
-    }
 `;
+
 const SelectWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -324,20 +346,31 @@ const HiddenIconWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    margin: auto;
     @media (max-width: ${SCREEN_WIDTH.s}) {
         justify-content: center;
         align-items: center;
     }
 `;
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.div<{ $disabled: boolean }>`
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     @media (max-width: ${SCREEN_WIDTH.s}) {
         margin-top: 1rem;
+    }
+
+    button {
+        cursor: ${props => (props?.$disabled ? 'not-allowed' : 'pointer')};
+        &:disabled {
+            background-color: #323234;
+            opacity: 0.65;
+            color: ${COLOR.ghostWhite};
+        }
     }
 `;
 
@@ -362,6 +395,26 @@ const StyledErrorMessage = styled(ErrorMessage)`
 const StyledInput = styled.input`
     width: 100%;
     height: 38px;
+    font-size: 1.2rem;
+    padding: 2px 8px;
+    outline: none;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font: inherit;
+
+    &:focus {
+        border-color: #f59871;
+        box-shadow: 0 0 0 1px #f59871;
+    }
+
+    &:hover {
+        border-color: #f59871;
+    }
+`;
+const StyledTextArea = styled.textarea`
+    width: 100%;
+    min-height: 74px;
     font-size: 1.2rem;
     padding: 2px 8px;
     outline: none;

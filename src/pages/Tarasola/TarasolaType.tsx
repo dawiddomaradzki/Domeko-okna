@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import { TarasolaImage, TarasolaText } from '@/Global/components/commonComponents';
 import HeaderWithLine from '@/Global/components/HeaderWithLine/HeaderWithLine';
 import { SCREEN_WIDTH } from '@/Global/globalStyles';
+import carousel2 from '@/resources/Images/carousel2.png';
 import technicPro from '@/resources/Images/Tarasola/t1.webp';
-import cubic from '@/resources/Images/Tarasola/t2.webp';
+import cubic from '@/resources/Images/Tarasola/t2.jpg';
 import carport from '@/resources/Images/Tarasola/t3.webp';
+
+import { ImageContainer } from './common';
 
 interface TarasolaTypeProps {
     className?: string;
@@ -19,7 +22,7 @@ const TarasolaType = ({ className }: TarasolaTypeProps) => {
             <TypeWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="center-bottom">
-                        <TarasolaImage src={technicPro} alt="tarasola logo" />
+                        <TarasolaImage src={technicPro} alt="Technic Pro" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
                         <TarasolaText>
@@ -30,16 +33,16 @@ const TarasolaType = ({ className }: TarasolaTypeProps) => {
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
                         <TarasolaText>
-                            <b>Cubic</b> – Konstrukcja z dachem takninowym – podwójna tkanina dolna oraz górna
+                            <b>Cubic</b> – Konstrukcja z dachem tkaninowym – podwójna tkanina
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-                        <TarasolaImage src={cubic} alt="tarasola logo" />
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
+                        <TarasolaImage src={cubic} alt="cubic" />
                     </ImageContainer>
                 </ImageWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="bottom-bottom">
-                        <TarasolaImage src={carport} alt="tarasola logo" />
+                        <TarasolaImage src={carport} alt="Carport" />
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
                         <TarasolaText>
@@ -47,6 +50,16 @@ const TarasolaType = ({ className }: TarasolaTypeProps) => {
                             zadaszenie dla samochodu
                         </TarasolaText>
                     </TextWrapper>
+                </ImageWrapper>
+                <ImageWrapper>
+                    <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
+                        <TarasolaText>
+                            <b>Fix</b> – Konstrukcja z dachem z poliwęglanu
+                        </TarasolaText>
+                    </TextWrapper>
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
+                        <TarasolaImage src={carousel2} alt="fix" />
+                    </ImageContainer>
                 </ImageWrapper>
             </TypeWrapper>
         </div>
@@ -69,7 +82,7 @@ const TextWrapper = styled.div`
 `;
 
 const TypeWrapper = styled.div`
-    max-width: 1700px;
+    max-width: 1500px;
     margin: auto;
 `;
 
@@ -84,5 +97,4 @@ const ImageWrapper = styled.div`
     }
 `;
 
-const ImageContainer = styled.div``;
 export default Styled;

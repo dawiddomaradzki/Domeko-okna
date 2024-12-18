@@ -7,6 +7,8 @@ import { SCREEN_WIDTH } from '@/Global/globalStyles';
 import freeStand from '@/resources/Images/Tarasola/t5.jpg';
 import sideStand from '@/resources/Images/Tarasola/t6.jpg';
 
+import { ImageContainer } from './common';
+
 interface TarasolaConstructionProps {
     className?: string;
 }
@@ -22,17 +24,17 @@ const TarasolaConstruction = ({ className }: TarasolaConstructionProps) => {
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
                         <TarasolaText>
-                            <b>Wolnostojący</b>
+                            <b>Wolnostojąca</b>
                         </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="fade-left" data-aos-anchor-placement="center-bottom">
                         <TarasolaText>
-                            <b>Przyścienny</b>
+                            <b>Przyścienna</b>
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
                         <TarasolaImage src={sideStand} alt="sideStand" />
                     </ImageContainer>
                 </ImageWrapper>
@@ -56,7 +58,7 @@ const TextWrapper = styled.div`
 `;
 
 const TypeWrapper = styled.div`
-    max-width: 1700px;
+    max-width: 1500px;
     margin: auto;
 `;
 
@@ -71,5 +73,4 @@ const ImageWrapper = styled.div`
     }
 `;
 
-const ImageContainer = styled.div``;
 export default Styled;

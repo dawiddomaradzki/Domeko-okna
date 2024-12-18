@@ -47,6 +47,7 @@ export const accessories = [
 ];
 
 const WYMAGANE_POLE = 'To pole jest wymagane';
+const PHONE_OR_EMAIL_REQUIRED = 'Podaj email lub numer';
 
 const SelectValidation = Yup.object()
     .shape({
@@ -70,11 +71,13 @@ const MultiSelectValidation = Yup.array()
 export type TemplateParams = {
     name: string;
     number: string;
+    email: string;
     type: Option | null;
     dimension: Option | null;
     construction: Option | null;
     sideConstruction: Option[] | null;
     accessories: Option[] | null;
+    comments: string;
 };
 
 export type Option = {
@@ -85,15 +88,30 @@ export type Option = {
 export const initialValues: TemplateParams = {
     name: '',
     number: '',
+    email: '',
     type: null,
     dimension: null,
     construction: null,
     sideConstruction: null,
     accessories: null,
+    comments: '',
 };
 export const validationSchema = Yup.object({
     name: Yup.string().required(WYMAGANE_POLE),
-    number: Yup.string().matches(/^\d+$/, 'Only numeric values are allowed').required(WYMAGANE_POLE),
+    number: Yup.string()
+        .matches(/^\d+$/, 'Niepoprawny format')
+        .test('email-or-number', PHONE_OR_EMAIL_REQUIRED, function (value) {
+            // Access the `email` field value using the context
+            const { email } = this.parent;
+            return !!value || !!email;
+        }),
+    email: Yup.string()
+        .email('Niepoprawny format')
+        .test('email-or-number', PHONE_OR_EMAIL_REQUIRED, function (value) {
+            // Access the `number` field value using the context
+            const { number } = this.parent;
+            return !!value || !!number;
+        }),
     type: SelectValidation,
     dimension: SelectValidation,
     construction: SelectValidation,

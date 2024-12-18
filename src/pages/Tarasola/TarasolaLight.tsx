@@ -11,6 +11,8 @@ import line from '@/resources/Images/Tarasola/t14.webp';
 import strip from '@/resources/Images/Tarasola/t15.webp';
 import box from '@/resources/Images/Tarasola/t16.png';
 
+import { ImageContainer } from './common';
+
 interface TarasolaLightProps {
     className?: string;
 }
@@ -18,7 +20,7 @@ interface TarasolaLightProps {
 const TarasolaLight = ({ className }: TarasolaLightProps) => {
     return (
         <div className={className} id="light">
-            <HeaderWithLine text="Oświetlenia" />
+            <HeaderWithLine text="Oświetlenie" />
             <TypeWrapper>
                 <ImageWrapper>
                     <ImageContainer data-aos="fade-right" data-aos-anchor-placement="center-bottom">
@@ -36,7 +38,7 @@ const TarasolaLight = ({ className }: TarasolaLightProps) => {
                             <b>Listwa LED</b> po obwodzie konstrukcji - RGB
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
                         <TarasolaImage src={LEDRGB} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
@@ -46,17 +48,17 @@ const TarasolaLight = ({ className }: TarasolaLightProps) => {
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
                         <TarasolaText>
-                            Na dachu: <b>spot</b>
+                            W dachu: <b>spot</b>
                         </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
                         <TarasolaText>
-                            Na dachu: <b>line</b>
+                            W dachu: <b>line</b>
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
                         <TarasolaImage src={line} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
@@ -66,17 +68,17 @@ const TarasolaLight = ({ className }: TarasolaLightProps) => {
                     </ImageContainer>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
                         <TarasolaText>
-                            Na dachu: <b>strip</b>
+                            W dachu: <b>strip</b>
                         </TarasolaText>
                     </TextWrapper>
                 </ImageWrapper>
                 <ImageWrapper>
                     <TextWrapper data-aos="zoom-out" data-aos-anchor-placement="center-bottom">
                         <TarasolaText>
-                            Na dachu: <b>box</b>
+                            W dachu: <b>box</b>
                         </TarasolaText>
                     </TextWrapper>
-                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+                    <ImageContainer data-aos="fade-left" data-aos-anchor-placement="center-bottom" $alignRight>
                         <TarasolaImage src={box} alt="tarasola logo" />
                     </ImageContainer>
                 </ImageWrapper>
@@ -100,7 +102,7 @@ const TextWrapper = styled.div`
 `;
 
 const TypeWrapper = styled.div`
-    max-width: 1700px;
+    max-width: 1500px;
     margin: auto;
 `;
 
@@ -114,5 +116,4 @@ const ImageWrapper = styled.div`
     }
 `;
 
-const ImageContainer = styled.div``;
 export default Styled;

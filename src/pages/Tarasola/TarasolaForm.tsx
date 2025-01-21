@@ -111,7 +111,6 @@ const TarasolaForm = ({ className }: TarasolaFormProps) => {
                             onSubmit={handleSubmit}
                         >
                             {({ setFieldValue, values, isSubmitting, submitForm, isValid }) => {
-                                console.log(`%cvalues.email`, `color: #2EFF2E`, values.email);
                                 return (
                                     <Form>
                                         <Box>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { COLOR, SCREEN_WIDTH } from '@/Global/globalStyles';
 import { ReactComponent as ArrowUpLogoSVG } from '@/resources/Icons/arrow-up-long.svg';
+import { ReactComponent as FacebookLogoSVG } from '@/resources/Icons/facebook.svg'; // Import Facebook logo
 import { scrollToSectionWithOffset } from '@/utils/scrollTo';
 
 import TarasolaAccessories from './TarasolaAccessories';
@@ -33,6 +34,7 @@ const Tarasola = ({ className }: TarasolaProps) => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
     return (
         <div className={className} id="top">
             <TarasolaForm />
@@ -44,6 +46,14 @@ const Tarasola = ({ className }: TarasolaProps) => {
             <IconWrapper $isVisible={isVisible} onClick={() => scrollToSectionWithOffset('top', 0)}>
                 <ArrowUpLogoSVG />
             </IconWrapper>
+            <FacebookIconWrapper
+                as="a"
+                href="https://www.facebook.com/profile.php?id=61568526216128"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <FacebookLogoSVG />
+            </FacebookIconWrapper>
         </div>
     );
 };
@@ -82,6 +92,34 @@ const IconWrapper = styled.div<{ $isVisible: boolean }>`
             fill: ${COLOR.deepCarrotOrange};
             transition: fill 0.3s ease;
         }
+    }
+`;
+
+const FacebookIconWrapper = styled.div`
+    position: fixed;
+    opacity: 85%;
+    left: 10px;
+    top: 10rem;
+    background-color: ${COLOR.grey};
+    border-radius: 10%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    & svg {
+        height: 1.75rem;
+    }
+
+    &:hover svg {
+        & path:first-of-type {
+            fill: #1877f2;
+        }
+    }
+
+    @media (max-width: ${SCREEN_WIDTH.xs}) {
+        top: 7rem;
     }
 `;
 

@@ -32,6 +32,17 @@ import picture24 from '@/resources/Images/Realizations/24.jpg';
 import picture25 from '@/resources/Images/Realizations/25.jpg';
 import picture26 from '@/resources/Images/Realizations/26.jpg';
 import picture27 from '@/resources/Images/Realizations/27.jpg';
+import picture28 from '@/resources/Images/Realizations/28.jpg';
+import picture29 from '@/resources/Images/Realizations/29.jpg';
+import picture30 from '@/resources/Images/Realizations/30.jpg';
+import picture31 from '@/resources/Images/Realizations/31.jpg';
+import picture32 from '@/resources/Images/Realizations/32.jpg';
+import picture33 from '@/resources/Images/Realizations/33.jpg';
+import picture34 from '@/resources/Images/Realizations/34.jpg';
+import picture35 from '@/resources/Images/Realizations/35.jpg';
+import picture36 from '@/resources/Images/Realizations/36.jpg';
+import picture37 from '@/resources/Images/Realizations/37.jpg';
+import picture38 from '@/resources/Images/Realizations/38.jpg';
 
 interface RealizationsProps {
     className?: string;
@@ -81,6 +92,50 @@ const images = [
     {
         original: picture27,
         thumbnail: picture27,
+    },
+    {
+        original: picture28,
+        thumbnail: picture28,
+    },
+    {
+        original: picture29,
+        thumbnail: picture29,
+    },
+    {
+        original: picture30,
+        thumbnail: picture30,
+    },
+    {
+        original: picture31,
+        thumbnail: picture31,
+    },
+    {
+        original: picture32,
+        thumbnail: picture32,
+    },
+    {
+        original: picture33,
+        thumbnail: picture33,
+    },
+    {
+        original: picture34,
+        thumbnail: picture34,
+    },
+    {
+        original: picture35,
+        thumbnail: picture35,
+    },
+    {
+        original: picture36,
+        thumbnail: picture36,
+    },
+    {
+        original: picture37,
+        thumbnail: picture37,
+    },
+    {
+        original: picture38,
+        thumbnail: picture38,
     },
     {
         original: picture5,

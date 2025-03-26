@@ -25,6 +25,13 @@ const Navigation = ({ className }: NavigationProps) => {
                 </ImageWrapper>
                 <NavTextWrapper>
                     <StyledNavItem>
+                        <StyledText>
+                            <a href="https://www.hormann.pl" target="blank">
+                                Hormann
+                            </a>
+                        </StyledText>
+                    </StyledNavItem>
+                    <StyledNavItem>
                         <StyledNavLink to="/tarasola">
                             <StyledText>Tarasola - Wyceń</StyledText>
                         </StyledNavLink>

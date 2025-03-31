@@ -215,13 +215,13 @@ const Memoized = memo(Realizations);
 const Styled = styled(Memoized)`
     max-width: 1800px;
     margin: auto;
-    padding-top: 10rem;
+    padding-top: 12rem;
 
     @media (max-width: ${SCREEN_WIDTH.lBottom}) {
-        padding-top: 8rem;
+        padding-top: 10rem;
     }
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        padding-top: 7rem;
+        padding-top: 9rem;
     }
 `;
 

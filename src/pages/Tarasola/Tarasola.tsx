@@ -60,10 +60,10 @@ const Tarasola = ({ className }: TarasolaProps) => {
 
 const Memoized = memo(Tarasola);
 const Styled = styled(Memoized)`
-    padding: 10rem 3rem 0 3rem;
+    padding: 12rem 3rem 0 3rem;
 
     @media (max-width: ${SCREEN_WIDTH.s}) {
-        padding: 8rem 1rem 0 1rem;
+        padding: 9rem 1rem 0 1rem;
     }
 `;
 
@@ -99,7 +99,7 @@ const FacebookIconWrapper = styled.div`
     position: fixed;
     opacity: 85%;
     left: 10px;
-    top: 10rem;
+    top: 13rem;
     background-color: ${COLOR.grey};
     border-radius: 10%;
     padding: 10px;
@@ -119,7 +119,7 @@ const FacebookIconWrapper = styled.div`
     }
 
     @media (max-width: ${SCREEN_WIDTH.xs}) {
-        top: 7rem;
+        top: 10rem;
     }
 `;
 

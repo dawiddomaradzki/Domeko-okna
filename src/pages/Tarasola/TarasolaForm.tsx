@@ -380,7 +380,7 @@ const FormContainer = styled.div`
 
     @media (max-width: ${SCREEN_WIDTH.s}) {
         justify-content: center;
-        min-width: 350px;
+        min-width: 290px;
         padding: 0;
     }
 `;

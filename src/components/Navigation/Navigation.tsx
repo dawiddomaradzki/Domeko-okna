@@ -43,12 +43,12 @@ const Navigation = ({ className }: NavigationProps) => {
                     </StyledNavItem>
                     <StyledNavItem>
                         <StyledNavLink to="/">
-                            <StyledText>Okna i drzwi</StyledText>
+                            <StyledText>Okna</StyledText>
                         </StyledNavLink>
                     </StyledNavItem>
                     <StyledNavItem>
                         <StyledNavLink to="/shop">
-                            <StyledText>Projektowanie i wnętrza</StyledText>
+                            <StyledText>Projektowanie</StyledText>
                         </StyledNavLink>
                     </StyledNavItem>
                 </NavTextWrapper>
